@@ -31,6 +31,12 @@
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy"
   },
+  "cookie_banner": {
+    "text": "We use cookies to analyse and improve our website.",
+    "accept": "Accept",
+    "reject": "Necessary only",
+    "policy_link": "More info"
+  },
   "a11y": {
     "skip_to_content": "Skip to content",
     "logo_alt": "PCD Investment Partners logo - digital healthcare technology ecosystem",

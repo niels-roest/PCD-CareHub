@@ -1,0 +1,19 @@
+<!-- ============================================ -->
+<!-- COOKIE CONSENT BANNER                       -->
+<!-- ============================================ -->
+<div id="cookie-consent" class="cookie-banner" role="dialog" aria-label="{{ t.cookie_banner.text }}" hidden>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 py-3">
+        <p class="text-sm text-white/80 text-center sm:text-left">
+            {{ t.cookie_banner.text }}
+            <a href="{{ langPrefix }}/cookiebeleid-eu" class="underline text-white/90 hover:text-white transition-colors">{{ t.cookie_banner.policy_link }}</a>
+        </p>
+        <div class="flex items-center gap-2 shrink-0">
+            <button id="cookie-reject" class="px-4 py-1.5 text-xs font-medium text-white/70 border border-white/20 rounded hover:border-white/40 hover:text-white transition-colors">
+                {{ t.cookie_banner.reject }}
+            </button>
+            <button id="cookie-accept" class="px-4 py-1.5 text-xs font-medium text-white bg-brand-blue rounded hover:bg-brand-blue-dark transition-colors">
+                {{ t.cookie_banner.accept }}
+            </button>
+        </div>
+    </div>
+</div>

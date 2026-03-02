@@ -231,6 +231,78 @@
     });
 
     /* ============================================
+       COOKIE CONSENT BANNER
+       ============================================ */
+    var GA_ID = 'G-TCSN62NJ0B';
+    var CONSENT_KEY = 'pcd_cookie_consent';
+    var cookieBanner = document.getElementById('cookie-consent');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var rejectBtn = document.getElementById('cookie-reject');
+
+    function loadGoogleAnalytics() {
+        if (!GA_ID) return;
+
+        // Load gtag.js
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(script);
+
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { anonymize_ip: true });
+    }
+
+    function showCookieBanner() {
+        if (!cookieBanner) return;
+        cookieBanner.removeAttribute('hidden');
+        // Force reflow so the transition triggers
+        cookieBanner.offsetHeight;
+        cookieBanner.classList.add('visible');
+    }
+
+    function hideCookieBanner() {
+        if (!cookieBanner) return;
+        cookieBanner.classList.remove('visible');
+        cookieBanner.classList.add('hiding');
+        // Remove from DOM after transition
+        setTimeout(function () {
+            cookieBanner.setAttribute('hidden', '');
+            cookieBanner.classList.remove('hiding');
+        }, 450);
+    }
+
+    // Check stored consent on page load
+    var storedConsent = localStorage.getItem(CONSENT_KEY);
+
+    if (storedConsent === 'accepted') {
+        // Returning visitor who accepted — load GA silently
+        loadGoogleAnalytics();
+    } else if (!storedConsent) {
+        // First visit — show banner after short delay
+        setTimeout(showCookieBanner, 800);
+    }
+    // If 'rejected', do nothing (no GA, no banner)
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem(CONSENT_KEY, 'accepted');
+            loadGoogleAnalytics();
+            hideCookieBanner();
+        });
+    }
+
+    if (rejectBtn) {
+        rejectBtn.addEventListener('click', function () {
+            localStorage.setItem(CONSENT_KEY, 'rejected');
+            hideCookieBanner();
+        });
+    }
+
+    /* ============================================
        CLOSE MOBILE MENU ON RESIZE TO DESKTOP
        ============================================ */
     var mediaQuery = window.matchMedia('(min-width: 1024px)');

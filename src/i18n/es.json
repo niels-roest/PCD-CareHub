@@ -31,6 +31,12 @@
     "privacy": "Política de privacidad",
     "cookies": "Política de cookies"
   },
+  "cookie_banner": {
+    "text": "Utilizamos cookies para analizar y mejorar nuestro sitio web.",
+    "accept": "Aceptar",
+    "reject": "Solo necesarias",
+    "policy_link": "Más información"
+  },
   "a11y": {
     "skip_to_content": "Ir al contenido",
     "logo_alt": "Logo de PCD Investment Partners - ecosistema de tecnología sanitaria digital",
