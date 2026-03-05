@@ -3,7 +3,7 @@
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
 <meta name="author" content="PCD Investment Partners">
-<meta name="robots" content="index, follow">
+{% if noindex %}<meta name="robots" content="noindex, nofollow">{% else %}<meta name="robots" content="index, follow">{% endif %}
 <link rel="canonical" href="{{ canonical }}">
 
 <!-- Hreflang tags -->

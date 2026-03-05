@@ -199,6 +199,7 @@ for (const lang of LANGUAGES) {
       description: frontmatter.description || '',
       og_image: ogImage,
       og_locale: lang.ogLocale,
+      noindex: frontmatter.noindex || false,
     };
 
     // Render page content (may contain Nunjucks variables like {{ rootPath }}, {{ langPrefix }})
@@ -239,8 +240,8 @@ for (const lang of LANGUAGES) {
       // Still generate the page with NL content but target language UI
     }
 
-    // Track for sitemap (skip 404)
-    if (pageName !== '404') {
+    // Track for sitemap (skip 404 and noindex pages)
+    if (pageName !== '404' && !frontmatter.noindex) {
       sitemapEntries.push({
         url: `${SITE_URL}${canonicalPath}`,
         lang: lang.code,
