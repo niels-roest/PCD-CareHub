@@ -340,15 +340,21 @@ Allow: /
 # Compliant with EU Directive 2019/790 Art. 4
 User-agent: GPTBot
 Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
 User-agent: Google-Extended
 Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 User-agent: CCBot
 Disallow: /
 User-agent: anthropic-ai
+Disallow: /
+User-agent: Bytespider
 Disallow: /
 
 # Content signals (proposed standard)
@@ -359,6 +365,41 @@ Disallow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 fs.writeFileSync(path.join(DIST, 'robots.txt'), robotsTxt);
+
+// Generate llms.txt for AI crawlers
+console.log('Generating llms.txt...');
+const llmsTxt = `# PCD Investment Partners
+> PCD Investment Partners builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.
+
+## About
+- [About PCD Investment Partners](${SITE_URL}/en/pioneering-health-care-technology): Mission, vision, and strategy for healthcare digitalization
+- [Leadership](${SITE_URL}/en/leadership): Board and management team
+- [ESG Statement](${SITE_URL}/en/esg-statement): Environmental, social, and governance commitments
+- [Strategy](${SITE_URL}/en/strategy): Investment strategy and approach
+
+## CareHub Ecosystem
+- [CareHub Platform](${SITE_URL}/en/carehub-healthcare-digitalization): Digital integration platform connecting healthcare systems via FHIR and HL7
+- [For Healthcare Organizations](${SITE_URL}/en/healthcare-organizations): How CareHub reduces administrative burden and improves care quality
+- [For HealthTech Companies](${SITE_URL}/en/healthtech-companies): Scale-up opportunities within the CareHub ecosystem
+- [For Investors & Partners](${SITE_URL}/en/investors-partners): Investment opportunities in Dutch healthcare digitalization
+
+## Insights & Cases
+- [Insights](${SITE_URL}/en/insights): Analysis and trends in digital healthcare
+- [Cases](${SITE_URL}/en/cases): Real-world CareHub implementations
+
+## Key Facts
+- Founded: 2024
+- Focus: Dutch healthcare digitalization (care sector)
+- Model: Buy-and-build ecosystem
+- Standards: FHIR, HL7, NEN 7510, ISO 27001, AVG/GDPR compliant
+- Area: Netherlands and Europe
+- Languages: Dutch, English, Spanish, Portuguese (Brazil)
+
+## Contact
+- Website: ${SITE_URL}
+- LinkedIn: https://www.linkedin.com/company/pcd-investment-partners/
+`;
+fs.writeFileSync(path.join(DIST, 'llms.txt'), llmsTxt);
 
 // ============================================
 // 10. Responsive srcset for content images
