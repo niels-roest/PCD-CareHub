@@ -35,7 +35,7 @@ slug: ""
                         </div>
                     </div>
                     <div class="fade-in-up hidden lg:block" style="animation-delay: 0.2s;">
-                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometrische illustratie van geïntegreerd healthcare ecosysteem met centraal ziekenhuis, klinieken en verbonden patiënten en zorgverleners in Nederland" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager">
+                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometrische illustratie van geïntegreerd healthcare ecosysteem met centraal ziekenhuis, klinieken en verbonden patiënten en zorgverleners in Nederland" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="310">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Marktgroei zorgtechnologie</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Bron: Precedence Research, 2024</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Bron: Precedence Research, 2024</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -72,7 +72,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="60">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Minder administratieve lasten</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Bron: CareHub case studies</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Bron: CareHub case studies</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -436,7 +436,7 @@ slug: ""
                         </div>
                     </div>
                     <div class="fade-in-up" style="animation-delay: 0.15s;">
-                        <form action="https://formsubmit.co/info@pcdinvestmentpartners.com" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
+                        <form id="cta-form" action="#" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
                             <input type="hidden" name="_subject" value="Contactformulier homepage - PCD Investment Partners">
                             <input type="hidden" name="_next" value="https://pcdinvestmentpartners.com/contact">
                             <input type="text" name="_honey" style="display:none">
@@ -463,6 +463,7 @@ slug: ""
                                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </button>
                         </form>
+                        <script>!function(){var f=document.getElementById('cta-form'),u='info',d='pcdinvestmentpartners.com';f.action='https://formsubmit.co/'+u+'@'+d}();</script>
                     </div>
                 </div>
             </div>
@@ -472,91 +473,16 @@ slug: ""
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "Hoe werkt het CareHub-ecosysteem?",
-        "description": "Van elektronisch cliëntendossier tot telemonitoring: de CareHub verbindt alle schakels in de zorgketen via één veilige integratielaag.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Verbinden",
-                "text": "Koppel bestaande systemen — ECD, EPD, planning en facturatie — via open standaarden aan de CareHub."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Integreren",
-                "text": "De integratielaag normaliseert zorgdata en creëert één cliëntbeeld voor alle betrokken zorgverleners."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Automatiseren",
-                "text": "Workflow-automatisering reduceert registratielast en geeft zorgprofessionals meer tijd voor de cliënt."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Opschalen",
-                "text": "Van lokale implementatie naar een regionaal en Europees digitaal zorg ecosysteem via schaalbare architectuur."
-            }
-        ]
-    }
-    </script>
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Is de CareHub een nieuw IT-systeem of een investeringsfonds?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "De CareHub is in de eerste plaats een ecosysteem — geen enkel softwareproduct of beleggingsvehikel. Het is een integratielaag die bestaande, bewezen zorgsoftware (ECD, EPD, planning, CRM, data-platforms) met elkaar verbindt. PCD Investment Partners investeert in de bedrijven die samen dit ecosysteem vormen, zodat zorgorganisaties toegang krijgen tot best-of-breed oplossingen via één samenhangende digitale omgeving."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Hoe verschilt de CareHub van een traditioneel ECD of EPD?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Een ECD of EPD is één onderdeel van het digitale zorglandschap. De CareHub verbíndt al die onderdelen: elektronisch cliëntendossier, planning, facturatie, CRM, cliëntportalen en data-analyse. In plaats van één leverancier voor alles kiest de CareHub voor interoperabiliteit — open standaarden zoals FHIR en HL7 zorgen ervoor dat systemen naadloos samenwerken. Het resultaat: een compleet cliëntbeeld zonder vendor lock-in."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Voor welke zorgsectoren is de CareHub geschikt?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "De CareHub is ontworpen voor de gehele care-sector in Nederland en Europa: GGZ, jeugdzorg, ouderenzorg, langdurige zorg (Wlz), wijkverpleging en revalidatie. Door de modulaire opzet en open architectuur kan het ecosysteem worden aangepast aan de specifieke workflows en registratievereisten van elke sector."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is de CareHub veilig en voldoet het aan wet- en regelgeving?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ja. Privacy-by-design en security-by-default zijn kernprincipes van het CareHub-ecosysteem. Alle aangesloten oplossingen voldoen aan NEN 7510, ISO 27001 en de AVG. Daarnaast anticiperen we op de Wegiz (Wet elektronische gegevensuitwisseling in de zorg) en het European Health Data Space (EHDS), zodat zorgorganisaties toekomstbestendig digitaliseren."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Hoe kan mijn zorgtech-bedrijf aansluiten bij het ecosysteem?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Zorgtech-bedrijven kunnen op verschillende manieren aansluiten bij de CareHub. Als scale-up kunt u profiteren van integratie in een groter ecosysteem, toegang tot een breed netwerk van zorgklanten, en ondersteuning bij financiering en opschaling. PCD biedt een buy-and-build model waarbij bewezen zorgsoftware wordt samengebracht in één sterk platform. Neem contact op om de mogelijkheden te bespreken."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Wat maakt PCD Investment Partners anders dan andere investeerders in de zorg?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "PCD is geen traditionele private equity-partij. Wij investeren niet om te knippen en plakken, maar om een samenhangend ecosysteem te bouwen. Onze buy-and-build strategie richt zich op langetermijnwaardecreatie: we brengen de beste zorgtechnologie samen, stimuleren interoperabiliteit via open standaarden, en bouwen aan de digitale ruggengraat van de Nederlandse en Europese zorgsector. ESG-principes en maatschappelijke impact staan centraal in elke investering."
-                }
-            }
-        ]
+        "@type": "WebSite",
+        "name": "PCD Investment Partners",
+        "alternateName": "PCD",
+        "url": "https://pcdinvestmentpartners.com",
+        "inLanguage": ["nl", "en", "es", "pt-BR"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "PCD Investment Partners",
+            "url": "https://pcdinvestmentpartners.com"
+        }
     }
     </script>
 <script type="application/ld+json">

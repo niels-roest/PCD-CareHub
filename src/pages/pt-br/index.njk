@@ -35,7 +35,7 @@ slug: ""
                         </div>
                     </div>
                     <div class="fade-in-up hidden lg:block" style="animation-delay: 0.2s;">
-                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Ilustração isométrica de um ecossistema de saúde integrado com hospital central, clínicas e pacientes e profissionais de saúde conectados" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager">
+                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Ilustração isométrica de um ecossistema de saúde integrado com hospital central, clínicas e pacientes e profissionais de saúde conectados" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="310">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Crescimento do mercado de healthtech</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Fonte: Precedence Research, 2024</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Fonte: Precedence Research, 2024</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -72,7 +72,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="60">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Menos carga administrativa</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Fonte: Estudos de caso CareHub</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Fonte: Estudos de caso CareHub</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -436,7 +436,7 @@ slug: ""
                         </div>
                     </div>
                     <div class="fade-in-up" style="animation-delay: 0.15s;">
-                        <form action="https://formsubmit.co/info@pcdinvestmentpartners.com" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
+                        <form id="cta-form" action="#" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
                             <input type="hidden" name="_subject" value="Formulário de contato homepage - PCD Investment Partners">
                             <input type="hidden" name="_next" value="https://pcdinvestmentpartners.com/contact">
                             <input type="text" name="_honey" style="display:none">
@@ -463,6 +463,7 @@ slug: ""
                                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </button>
                         </form>
+                        <script>!function(){var f=document.getElementById('cta-form'),u='info',d='pcdinvestmentpartners.com';f.action='https://formsubmit.co/'+u+'@'+d}();</script>
                     </div>
                 </div>
             </div>
@@ -472,91 +473,16 @@ slug: ""
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "Como funciona o ecossistema CareHub?",
-        "description": "Do prontuário eletrônico do paciente ao telemonitoramento e telemedicina: o CareHub conecta todos os elos da cadeia de saúde por meio de uma única camada de integração segura.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Conectar",
-                "text": "Conecte sistemas existentes — PEP, agendamento e faturamento — ao CareHub por meio de padrões abertos."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Integrar",
-                "text": "A camada de integração normaliza os dados de saúde e cria uma visão única do paciente para todos os profissionais de saúde envolvidos."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Automatizar",
-                "text": "A automação de fluxos de trabalho reduz a carga de registro e dá aos profissionais de saúde mais tempo para o paciente."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Escalar",
-                "text": "Da implementação local a um ecossistema de saúde digital regional e europeu por meio de arquitetura escalável."
-            }
-        ]
-    }
-    </script>
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "O CareHub é um novo sistema de TI ou um fundo de investimento?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "O CareHub é, em primeiro lugar, um ecossistema — não um produto de software único nem um veículo de investimento. É uma camada de integração que conecta softwares de saúde existentes e comprovados (PEP, agendamento, CRM, plataformas de dados) entre si. A PCD Investment Partners investe nas empresas que juntas formam esse ecossistema, para que as organizações de saúde tenham acesso a soluções best-of-breed por meio de um único ambiente digital coeso."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Como o CareHub se diferencia de um PEP tradicional?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Um PEP é apenas um componente do cenário digital de saúde. O CareHub conecta todos esses componentes: prontuário eletrônico do paciente, agendamento, faturamento, CRM, portais de pacientes e análise de dados. Em vez de um único fornecedor para tudo, o CareHub opta pela interoperabilidade — padrões abertos como FHIR e HL7 garantem que os sistemas funcionem perfeitamente juntos. O resultado: uma visão completa do paciente sem vendor lock-in."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Para quais setores de saúde o CareHub é adequado?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "O CareHub foi projetado para todo o setor de cuidados de saúde na Europa: saúde mental, cuidados com a juventude, cuidados com idosos, cuidados de longo prazo, enfermagem domiciliar e reabilitação. Graças à sua estrutura modular e arquitetura aberta, o ecossistema pode ser adaptado aos fluxos de trabalho e requisitos de registro específicos de cada setor."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "O CareHub é seguro e está em conformidade com a legislação?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sim. Privacy-by-design e security-by-default são princípios fundamentais do ecossistema CareHub. Todas as soluções conectadas estão em conformidade com NEN 7510, ISO 27001 e LGPD/GDPR. Além disso, antecipamos a Wegiz (Lei de troca eletrônica de dados na saúde) e o European Health Data Space (EHDS), para que as organizações de saúde digitalizem de forma preparada para o futuro."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Como minha empresa de healthtech pode se juntar ao ecossistema?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Empresas de healthtech podem se juntar ao CareHub de diversas maneiras. Como scale-up, você pode se beneficiar da integração em um ecossistema maior, acesso a uma ampla rede de clientes de saúde e suporte em financiamento e escalabilidade. A PCD oferece um modelo buy-and-build no qual softwares de saúde comprovados são reunidos em uma única plataforma robusta. Entre em contato para discutir as possibilidades."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "O que diferencia a PCD Investment Partners de outros investidores na área de saúde?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A PCD não é uma empresa tradicional de private equity. Nós não investimos para cortar e colar, mas para construir um ecossistema coeso. Nossa estratégia buy-and-build foca na criação de valor de longo prazo: reunimos a melhor tecnologia de saúde, estimulamos a interoperabilidade por meio de padrões abertos e construímos a espinha dorsal digital do setor de saúde europeu. Os princípios ESG e o impacto social estão no centro de cada investimento."
-                }
-            }
-        ]
+        "@type": "WebSite",
+        "name": "PCD Investment Partners",
+        "alternateName": "PCD",
+        "url": "https://pcdinvestmentpartners.com",
+        "inLanguage": ["nl", "en", "es", "pt-BR"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "PCD Investment Partners",
+            "url": "https://pcdinvestmentpartners.com"
+        }
     }
     </script>
 <script type="application/ld+json">

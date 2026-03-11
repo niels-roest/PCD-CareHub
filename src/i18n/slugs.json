@@ -103,5 +103,10 @@
     "en": "author-niels-roest",
     "es": "autor-niels-roest",
     "pt-br": "autor-niels-roest"
+  },
+  "algemene-voorwaarden": {
+    "en": "terms-of-service",
+    "es": "condiciones-generales",
+    "pt-br": "termos-de-uso"
   }
 }

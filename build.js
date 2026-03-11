@@ -4,6 +4,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { globSync } = require('glob');
 const { execSync } = require('child_process');
+const crypto = require('crypto');
 
 // ============================================
 // Configuration
@@ -39,6 +40,30 @@ execSync('npx tailwindcss -i src/css/tailwind-input.css -o dist/css/tailwind.css
   cwd: __dirname,
   stdio: 'inherit',
 });
+
+// Minify custom.css (strip comments and excess whitespace)
+const customCssPath = path.join(DIST, 'css', 'custom.css');
+if (fs.existsSync(customCssPath)) {
+  let css = fs.readFileSync(customCssPath, 'utf8');
+  css = css.replace(/\/\*[\s\S]*?\*\//g, '');        // strip block comments
+  css = css.replace(/\s*\n\s*/g, '\n');               // collapse whitespace around newlines
+  css = css.replace(/\n{2,}/g, '\n');                  // collapse multiple newlines
+  css = css.replace(/;\s*}/g, '}');                    // remove last semicolons before }
+  fs.writeFileSync(customCssPath, css.trim());
+  console.log('Minified custom.css');
+}
+
+// Minify main.js (strip comments and excess whitespace)
+const mainJsPath = path.join(DIST, 'js', 'main.js');
+if (fs.existsSync(mainJsPath)) {
+  let js = fs.readFileSync(mainJsPath, 'utf8');
+  js = js.replace(/\/\*[\s\S]*?\*\//g, '');           // strip block comments
+  js = js.replace(/\/\/.*$/gm, '');                    // strip line comments
+  js = js.replace(/\s*\n\s*/g, '\n');                  // collapse whitespace
+  js = js.replace(/\n{2,}/g, '\n');                    // collapse multiple newlines
+  fs.writeFileSync(mainJsPath, js.trim());
+  console.log('Minified main.js');
+}
 
 const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html'];
 for (const file of staticFiles) {
@@ -208,6 +233,7 @@ for (const lang of LANGUAGES) {
       og_image: ogImage,
       og_locale: lang.ogLocale,
       noindex: frontmatter.noindex || false,
+      og_type: frontmatter.og_type || 'website',
     };
 
     // Render page content (may contain Nunjucks variables like {{ rootPath }}, {{ langPrefix }})
@@ -333,6 +359,121 @@ Disallow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 fs.writeFileSync(path.join(DIST, 'robots.txt'), robotsTxt);
+
+// ============================================
+// 10. Responsive srcset for content images
+// ============================================
+console.log('\nAdding responsive srcset to images...');
+
+const RESPONSIVE_WIDTHS = [480, 768];
+let srcsetCount = 0;
+
+const allHtmlFiles = globSync('**/*.html', { cwd: DIST });
+for (const htmlFile of allHtmlFiles) {
+  const htmlPath = path.join(DIST, htmlFile);
+  let html = fs.readFileSync(htmlPath, 'utf8');
+
+  // Determine rootPath for this file (subdir files use "../")
+  const depth = htmlFile.split('/').length - 1;
+  const rootPrefix = depth > 0 ? '../'.repeat(depth) : '';
+
+  html = html.replace(/<img\b([^>]*?)>/g, (match, attrs) => {
+    // Skip if already has srcset or is a small image (team photos, logos)
+    if (/srcset\s*=/.test(attrs)) return match;
+    if (/team-|partner-|pcd-logo-|logo\//.test(attrs)) return match;
+
+    const srcMatch = attrs.match(/src=["']([^"']*?)["']/);
+    if (!srcMatch) return match;
+    const src = srcMatch[1];
+
+    // Only process assets/images/*.webp
+    if (!src.includes('assets/images/') || !src.endsWith('.webp')) return match;
+
+    // Get filename relative to dist
+    const relativeSrc = src.replace(rootPrefix, '');
+    const baseName = path.basename(relativeSrc, '.webp');
+    const dirName = path.dirname(relativeSrc);
+
+    // Skip already-resized variants
+    if (/-\d+w$/.test(baseName)) return match;
+
+    // Check which responsive variants exist
+    const srcsetParts = [];
+    for (const w of RESPONSIVE_WIDTHS) {
+      const variantFile = path.join(DIST, dirName, `${baseName}-${w}w.webp`);
+      if (fs.existsSync(variantFile)) {
+        const variantSrc = `${src.replace(baseName + '.webp', baseName + '-' + w + 'w.webp')}`;
+        srcsetParts.push(`${variantSrc} ${w}w`);
+      }
+    }
+
+    // Add original as largest srcset entry
+    if (srcsetParts.length === 0) return match;
+
+    // Get original width from the file
+    const origFile = path.join(DIST, relativeSrc);
+    if (fs.existsSync(origFile)) {
+      srcsetParts.push(`${src} 1024w`);
+    }
+
+    const srcsetAttr = ` srcset="${srcsetParts.join(', ')}" sizes="(max-width: 640px) 480px, (max-width: 1024px) 768px, 1024px"`;
+    srcsetCount++;
+    return `<img${attrs}${srcsetAttr}>`;
+  });
+
+  fs.writeFileSync(htmlPath, html);
+}
+
+console.log(`  Added srcset to ${srcsetCount} images across ${allHtmlFiles.length} files`);
+
+// ============================================
+// 11. Cache-busting: hash CSS/JS filenames
+// ============================================
+console.log('\nAdding content hashes to CSS/JS...');
+
+const assetsToHash = [
+  { dir: 'css', file: 'tailwind.css' },
+  { dir: 'css', file: 'custom.css' },
+  { dir: 'js', file: 'main.js' },
+];
+
+const hashMap = {}; // original filename → hashed filename
+
+for (const asset of assetsToHash) {
+  const filePath = path.join(DIST, asset.dir, asset.file);
+  if (!fs.existsSync(filePath)) continue;
+
+  const content = fs.readFileSync(filePath);
+  const hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 8);
+  const ext = path.extname(asset.file);
+  const base = path.basename(asset.file, ext);
+  const hashedName = `${base}.${hash}${ext}`;
+
+  fs.renameSync(filePath, path.join(DIST, asset.dir, hashedName));
+  hashMap[`${asset.dir}/${asset.file}`] = `${asset.dir}/${hashedName}`;
+  console.log(`  ${asset.dir}/${asset.file} → ${asset.dir}/${hashedName}`);
+}
+
+// Replace references in all generated HTML files
+const htmlFiles = globSync('**/*.html', { cwd: DIST });
+for (const htmlFile of htmlFiles) {
+  const htmlPath = path.join(DIST, htmlFile);
+  let html = fs.readFileSync(htmlPath, 'utf8');
+  let changed = false;
+
+  for (const [original, hashed] of Object.entries(hashMap)) {
+    if (html.includes(original)) {
+      html = html.split(original).join(hashed);
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    fs.writeFileSync(htmlPath, html);
+  }
+}
+
+console.log(`  Updated ${htmlFiles.length} HTML files with hashed asset references`);
 
 // ============================================
 // Done

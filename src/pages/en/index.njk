@@ -35,7 +35,7 @@ slug: ""
                         </div>
                     </div>
                     <div class="fade-in-up hidden lg:block" style="animation-delay: 0.2s;">
-                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometric illustration of an integrated healthcare ecosystem with a central hospital, clinics, and connected patients and care providers in the Netherlands" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager">
+                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometric illustration of an integrated healthcare ecosystem with a central hospital, clinics, and connected patients and care providers in the Netherlands" class="w-full h-auto rounded-2xl shadow-2xl" width="640" height="480" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="310">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Healthcare technology market growth</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Source: Precedence Research, 2024</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Source: Precedence Research, 2024</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -72,7 +72,7 @@ slug: ""
                         <dd>
                             <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="60">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
                             <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Less administrative burden</p>
-                            <p class="mt-1 text-[10px] text-gray-400">Source: CareHub case studies</p>
+                            <p class="mt-1 text-[11px] text-gray-500">Source: CareHub case studies</p>
                         </dd>
                     </div>
                     <div class="text-center">
@@ -433,7 +433,7 @@ slug: ""
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
-                    <form action="https://formsubmit.co/info@pcdinvestmentpartners.com" method="POST" class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 space-y-4">
+                    <form id="cta-form" action="#" method="POST" class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 space-y-4">
                         <input type="hidden" name="_subject" value="New message from PCD website (EN)">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://pcdinvestmentpartners.com/en/">
@@ -458,6 +458,7 @@ slug: ""
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </button>
                     </form>
+                    <script>!function(){var f=document.getElementById('cta-form'),u='info',d='pcdinvestmentpartners.com';f.action='https://formsubmit.co/'+u+'@'+d}();</script>
                 </div>
             </div>
         </section>
@@ -466,91 +467,16 @@ slug: ""
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How the CareHub ecosystem works",
-        "description": "From electronic health records to remote monitoring and video care: the CareHub connects all links in the care chain through one secure integration layer.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Connect",
-                "text": "Link existing systems -- EHR, EMR, scheduling, and billing -- to the CareHub through open standards."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Integrate",
-                "text": "The integration layer normalizes healthcare data and creates a single client view for all involved care providers."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Automate",
-                "text": "Workflow automation reduces documentation burden and gives healthcare professionals more time for the client."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Scale",
-                "text": "From local implementation to a regional and European digital healthcare ecosystem through scalable architecture."
-            }
-        ]
-    }
-    </script>
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Is the CareHub a new IT system or an investment fund?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The CareHub is first and foremost an ecosystem -- not a single software product or investment vehicle. It is an integration layer that connects existing, proven healthcare software (EHR, EMR, scheduling, CRM, data platforms) with each other. PCD Investment Partners invests in the companies that together form this ecosystem, so that healthcare organizations gain access to best-of-breed solutions through one cohesive digital environment."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does the CareHub differ from a traditional EHR or EMR?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "An EHR or EMR is one component of the digital healthcare landscape. The CareHub connects all those components: electronic health records, scheduling, billing, CRM, client portals, and data analytics. Instead of one vendor for everything, the CareHub opts for interoperability -- open standards such as FHIR and HL7 ensure that systems work together seamlessly. The result: a complete client view without vendor lock-in."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Which healthcare sectors is the CareHub suitable for?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The CareHub is designed for the entire care sector in the Netherlands and Europe: mental health, youth care, elderly care, long-term care (Wlz), community nursing, and rehabilitation. Thanks to its modular design and open architecture, the ecosystem can be adapted to the specific workflows and documentation requirements of each sector."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is the CareHub secure and does it comply with laws and regulations?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Privacy-by-design and security-by-default are core principles of the CareHub ecosystem. All connected solutions comply with NEN 7510, ISO 27001, and the GDPR. Additionally, we anticipate Wegiz (the Dutch Electronic Data Exchange in Healthcare Act) and the European Health Data Space (EHDS), ensuring that healthcare organizations digitalize in a future-proof manner."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How can my healthtech company join the ecosystem?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Healthtech companies can join the CareHub in several ways. As a scale-up, you can benefit from integration into a larger ecosystem, access to a broad network of healthcare clients, and support with financing and scaling. PCD offers a buy-and-build model that brings proven healthcare software together in one strong platform. Get in touch to discuss the possibilities."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What makes PCD Investment Partners different from other healthcare investors?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "PCD is not a traditional private equity firm. We don't invest to cut and paste, but to build a cohesive ecosystem. Our buy-and-build strategy focuses on long-term value creation: we bring together the best healthcare technology, promote interoperability through open standards, and build the digital backbone of the Dutch and European healthcare sector. ESG principles and societal impact are central to every investment."
-                }
-            }
-        ]
+        "@type": "WebSite",
+        "name": "PCD Investment Partners",
+        "alternateName": "PCD",
+        "url": "https://pcdinvestmentpartners.com",
+        "inLanguage": ["nl", "en", "es", "pt-BR"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "PCD Investment Partners",
+            "url": "https://pcdinvestmentpartners.com"
+        }
     }
     </script>
 <script type="application/ld+json">

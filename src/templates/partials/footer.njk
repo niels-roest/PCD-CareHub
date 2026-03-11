@@ -18,7 +18,7 @@
 
             <!-- Column 2: Ecosysteem -->
             <div>
-                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">{{ t.footer.col_ecosystem }}</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">{{ t.footer.col_ecosystem }}</h3>
                 <ul class="space-y-3">
                     <li><a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.ecosystem_carehub }}</a></li>
                     <li><a href="{{ langPrefix }}/zorgorganisaties" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.ecosystem_zorgorganisaties }}</a></li>
@@ -31,23 +31,26 @@
 
             <!-- Column 3: Over PCD -->
             <div>
-                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">{{ t.footer.col_about }}</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">{{ t.footer.col_about }}</h3>
                 <ul class="space-y-3">
                     <li><a href="{{ langPrefix }}/pioneering-health-care-technology" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.about_pioneering }}</a></li>
                     <li><a href="{{ langPrefix }}/leiderschap" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.about_leadership }}</a></li>
                     <li><a href="{{ langPrefix }}/esg-verklaring" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.about_esg }}</a></li>
                     <li><a href="{{ langPrefix }}/contact" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.nav.contact }}</a></li>
                     <li><a href="{{ langPrefix }}/woordenlijst" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.footer.glossary }}</a></li>
+                    <li><a href="{{ langPrefix }}/strategie" class="text-sm text-white/60 hover:text-white transition-colors">{{ t.footer.strategy }}</a></li>
                 </ul>
             </div>
 
             <!-- Column 4: Contact -->
             <div>
-                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">{{ t.footer.col_contact }}</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-white/50 mb-4">{{ t.footer.col_contact }}</h3>
                 <address class="not-italic space-y-3 text-sm text-white/60">
                     <p>{{ t.footer.address | safe }}</p>
                     <p>
-                        <a href="mailto:info@pcdinvestmentpartners.com" class="hover:text-white transition-colors">info@pcdinvestmentpartners.com</a>
+                        <a id="footer-email" href="#" class="hover:text-white transition-colors"></a>
+                        <noscript><span>&#105;&#110;&#102;&#111;&#64;&#112;&#99;&#100;&#105;&#110;&#118;&#101;&#115;&#116;&#109;&#101;&#110;&#116;&#112;&#97;&#114;&#116;&#110;&#101;&#114;&#115;&#46;&#99;&#111;&#109;</span></noscript>
+                        <script>!function(){var a=document.getElementById('footer-email'),u='info',d='pcdinvestmentpartners.com';a.href='mai'+'lto:'+u+'@'+d;a.textContent=u+'@'+d}();</script>
                     </p>
                     <p>
                         <a href="tel:+31653852753" class="hover:text-white transition-colors">+31 6 53 85 27 53</a>
@@ -58,10 +61,11 @@
 
         <!-- Footer bottom -->
         <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-white/40">{{ t.footer.copyright | safe }}</p>
+            <p class="text-xs text-white/50">{{ t.footer.copyright | safe }}</p>
             <div class="flex gap-6">
-                <a href="{{ langPrefix }}/privacyverklaring" class="text-xs text-white/40 hover:text-white transition-colors">{{ t.footer.privacy }}</a>
-                <a href="{{ langPrefix }}/cookiebeleid-eu" class="text-xs text-white/40 hover:text-white transition-colors">{{ t.footer.cookies }}</a>
+                <a href="{{ langPrefix }}/privacyverklaring" class="text-xs text-white/50 hover:text-white transition-colors">{{ t.footer.privacy }}</a>
+                <a href="{{ langPrefix }}/cookiebeleid-eu" class="text-xs text-white/50 hover:text-white transition-colors">{{ t.footer.cookies }}</a>
+                <a href="{{ langPrefix }}/algemene-voorwaarden" class="text-xs text-white/50 hover:text-white transition-colors">{{ t.footer.terms }}</a>
             </div>
         </div>
     </div>
