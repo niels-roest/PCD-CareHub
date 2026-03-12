@@ -467,6 +467,12 @@ for (const htmlFile of allHtmlFiles) {
     return `<img${attrs}${srcsetAttr}>`;
   });
 
+  // Add decoding="async" to lazy-loaded images that don't already have it
+  html = html.replace(/<img\b([^>]*loading="lazy"[^>]*)>/g, (match, attrs) => {
+    if (/decoding\s*=/.test(attrs)) return match;
+    return match.replace('loading="lazy"', 'loading="lazy" decoding="async"');
+  });
+
   fs.writeFileSync(htmlPath, html);
 }
 

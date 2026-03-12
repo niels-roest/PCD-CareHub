@@ -108,5 +108,15 @@
     "en": "terms-of-service",
     "es": "condiciones-generales",
     "pt-br": "termos-de-uso"
+  },
+  "open-standaarden-vs-vendor-lock-in": {
+    "en": "open-standards-vs-vendor-lock-in",
+    "es": "estandares-abiertos-vs-vendor-lock-in",
+    "pt-br": "padroes-abertos-vs-vendor-lock-in"
+  },
+  "buy-and-build-vs-traditionele-overname": {
+    "en": "buy-and-build-vs-traditional-acquisition",
+    "es": "buy-and-build-vs-adquisicion-tradicional",
+    "pt-br": "buy-and-build-vs-aquisicao-tradicional"
   }
 }

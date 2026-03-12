@@ -1,0 +1,408 @@
+---
+title: "Open standaarden vs vendor lock-in in de zorg | PCD Investment Partners"
+description: "Vergelijking van open standaarden (FHIR, HL7) versus vendor lock-in in de Nederlandse zorg. Wat betekent dit voor uw zorgorganisatie en hoe kiest u toekomstbestendig?"
+og_image: "assets/logo/pcd-logo-design-blauw-transparant-500x500.png"
+og_locale: "nl_NL"
+slug: "open-standaarden-vs-vendor-lock-in"
+og_type: "article"
+---
+
+
+        <!-- ============================================ -->
+        <!-- HERO SECTION                                 -->
+        <!-- ============================================ -->
+        <section class="relative bg-navy-900 overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20" aria-label="Hero">
+            <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700"></div>
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb mb-8 fade-in-up" aria-label="Breadcrumb">
+                    <ol class="flex items-center">
+                        <li><a href="{{ langPrefix }}/">Home</a></li>
+                        <li><span class="separator" aria-hidden="true">/</span></li>
+                        <li><a href="{{ langPrefix }}/insights">Insights</a></li>
+                        <li><span class="separator" aria-hidden="true">/</span></li>
+                        <li><span class="text-white/90" aria-current="page">Open standaarden vs vendor lock-in</span></li>
+                    </ol>
+                </nav>
+
+                <div class="max-w-3xl fade-in-up" style="animation-delay: 0.1s">
+                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-6">Vergelijking</span>
+                    <h1 class="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">Open standaarden vs vendor lock-in: wat betekent dit voor uw zorgorganisatie?</h1>
+                    <p class="text-lg text-white/70 leading-relaxed mb-6">In de Nederlandse zorg staan organisaties voor een fundamentele keuze: investeren in systemen die op open standaarden draaien, of vasthouden aan gesloten platformen met vendor lock-in. Deze keuze bepaalt uw flexibiliteit, kosten en toekomstbestendigheid voor jaren.</p>
+                    <div class="flex items-center gap-4 text-sm text-white/50">
+                        <span>Door <a href="{{ langPrefix }}/auteur-niels-roest" class="text-white/70 hover:text-brand-blue transition-colors font-semibold">Niels Roest</a></span>
+                        <span aria-hidden="true">&middot;</span>
+                        <time datetime="2026-03">Maart 2026</time>
+                        <span aria-hidden="true">&middot;</span>
+                        <span>8 min leestijd</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- KEY TAKEAWAYS                               -->
+        <!-- ============================================ -->
+        <aside id="key-takeaways" class="bg-brand-light border-l-4 border-brand-blue" aria-label="Kernpunten">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <h2 class="text-lg font-bold text-navy-900 mb-4">Kernpunten</h2>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Open standaarden (FHIR, HL7) geven zorgorganisaties keuzevrijheid en verlagen switchkosten</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Vendor lock-in kost zorgorganisaties gemiddeld 20-40% meer over een contractperiode van 5 jaar</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>De Wegiz maakt interoperabiliteit via open standaarden wettelijk verplicht</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Het CareHub-ecosysteem is volledig gebouwd op open standaarden en biedt maximale flexibiliteit</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- ============================================ -->
+        <!-- WAT IS VENDOR LOCK-IN                        -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white" aria-label="Wat is vendor lock-in in de zorg?">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Het probleem</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-6">Wat is vendor lock-in in de zorg?</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">Vendor lock-in is de situatie waarbij een zorgorganisatie afhankelijk wordt van &eacute;&eacute;n softwareleverancier. De systemen, dataformaten en integraties zijn zo verweven met die ene leverancier dat overstappen naar een alternatief buitenproportioneel duur en complex wordt.</p>
+                <p class="text-gray-600 leading-relaxed mb-6">In de praktijk betekent dit dat uw ECD, EPD, planningssoftware en facturatiesysteem allemaal van dezelfde leverancier komen, of alleen via proprietary koppelingen met elkaar communiceren. Uw data zit opgesloten in een gesloten ecosysteem.</p>
+
+                <h3 class="text-xl font-bold text-navy-900 mb-4">Hoe herkennen zorgorganisaties vendor lock-in?</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="bg-brand-light rounded-xl p-5 border border-gray-100">
+                        <p class="text-gray-700"><strong class="text-navy-900">Hoge switchkosten.</strong> Migratie naar een ander systeem kost meer dan de oorspronkelijke implementatie, omdat data in proprietary formaten is opgeslagen.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-5 border border-gray-100">
+                        <p class="text-gray-700"><strong class="text-navy-900">Beperkte koppelingen.</strong> Integratie met derden is alleen mogelijk via de leverancier, vaak tegen meerkosten en met lange doorlooptijden.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-5 border border-gray-100">
+                        <p class="text-gray-700"><strong class="text-navy-900">Prijsverhogingen zonder alternatief.</strong> Jaarlijkse licentiekosten stijgen, maar overstappen is te kostbaar om serieus te overwegen.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-5 border border-gray-100">
+                        <p class="text-gray-700"><strong class="text-navy-900">Innovatiestagnatie.</strong> De leverancier bepaalt het ontwikkeltempo. Nieuwe functies komen wanneer het de leverancier uitkomt, niet wanneer de zorgorganisatie ze nodig heeft.</p>
+                    </div>
+                </div>
+
+                <!-- Stats callout -->
+                <div class="grid sm:grid-cols-3 gap-6 my-12">
+                    <div class="text-center bg-brand-light rounded-2xl p-6">
+                        <p class="text-3xl sm:text-4xl font-bold text-brand-blue mb-2">10+</p>
+                        <p class="text-sm font-medium text-navy-900">IT-systemen per zorginstelling</p>
+                        <p class="mt-1 text-[11px] text-gray-500">Bron: Nictiz eHealth-monitor 2023</p>
+                    </div>
+                    <div class="text-center bg-brand-light rounded-2xl p-6">
+                        <p class="text-3xl sm:text-4xl font-bold text-brand-blue mb-2">40%</p>
+                        <p class="text-sm font-medium text-navy-900">Tijd aan administratie</p>
+                        <p class="mt-1 text-[11px] text-gray-500">Bron: Berenschot/NZa 2023</p>
+                    </div>
+                    <div class="text-center bg-brand-light rounded-2xl p-6">
+                        <p class="text-3xl sm:text-4xl font-bold text-brand-blue mb-2">20-40%</p>
+                        <p class="text-sm font-medium text-navy-900">Meerkosten bij lock-in</p>
+                        <p class="mt-1 text-[11px] text-gray-500">Bron: Gartner IT Contract Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- WAT ZIJN OPEN STANDAARDEN                    -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-brand-light" aria-label="Wat zijn open standaarden?">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">De oplossing</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-6">Wat zijn open standaarden in de zorg?</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">Open standaarden zijn publiek beschikbare specificaties voor hoe systemen data uitwisselen. In de zorg zijn de belangrijkste standaarden <a href="{{ langPrefix }}/woordenlijst#fhir" class="text-brand-blue hover:text-brand-blue-dark font-medium">FHIR</a> (Fast Healthcare Interoperability Resources), <a href="{{ langPrefix }}/woordenlijst#hl7" class="text-brand-blue hover:text-brand-blue-dark font-medium">HL7</a> en REST API's. Met deze standaarden kunnen systemen van verschillende leveranciers naadloos met elkaar communiceren.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-8">Het verschil is fundamenteel: bij gesloten systemen bepaalt de leverancier hoe data wordt opgeslagen en uitgewisseld. Bij open standaarden is dat een gedeelde afspraak, waardoor elke leverancier kan aansluiten.</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-semibold text-navy-900 mb-2">FHIR (Fast Healthcare Interoperability Resources)</h3>
+                        <p class="text-gray-600 leading-relaxed">De moderne standaard voor zorgdata-uitwisseling, ontwikkeld door HL7 International. FHIR werkt met herkenbare webtechnologie (REST, JSON, XML) en maakt het mogelijk om cli&euml;ntgegevens, medicatie, labresultaten en meer gestandaardiseerd uit te wisselen tussen systemen.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-semibold text-navy-900 mb-2">HL7 v2/v3</h3>
+                        <p class="text-gray-600 leading-relaxed">De oudere, breed ge&iuml;mplementeerde berichtenstandaarden voor zorgcommunicatie. HL7 v2 is de meest gebruikte standaard in ziekenhuizen wereldwijd en zorgt voor uitwisseling van ADT-berichten, labresultaten en verwijzingen.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-semibold text-navy-900 mb-2">REST API's</h3>
+                        <p class="text-gray-600 leading-relaxed">Standaard webinterfaces waarmee applicaties data kunnen opvragen en versturen. REST API's vormen de technische basis waarop FHIR is gebouwd en maken integratie toegankelijk voor elke ontwikkelaar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- VERGELIJKINGSTABEL                           -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white" aria-label="Vergelijking open standaarden versus vendor lock-in">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-8">Vergelijking: open standaarden vs vendor lock-in</h2>
+
+                <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm mb-10">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-navy-900 text-white">
+                                <th class="text-left p-4 font-semibold">Criterium</th>
+                                <th class="text-left p-4 font-semibold">Open standaarden</th>
+                                <th class="text-left p-4 font-semibold">Vendor lock-in</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="bg-white">
+                                <td class="p-4 font-medium text-navy-900">Leverancierskeuze</td>
+                                <td class="p-4 text-gray-600">Vrije keuze, eenvoudig wisselen</td>
+                                <td class="p-4 text-gray-600">Gebonden aan &eacute;&eacute;n leverancier</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-medium text-navy-900">Data-eigenaarschap</td>
+                                <td class="p-4 text-gray-600">Data in open formaten, altijd exporteerbaar</td>
+                                <td class="p-4 text-gray-600">Data in proprietary formaten, moeilijk te migreren</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-4 font-medium text-navy-900">Integratiekosten</td>
+                                <td class="p-4 text-gray-600">Gestandaardiseerd, voorspelbaar</td>
+                                <td class="p-4 text-gray-600">Per koppeling, vaak onvoorspelbaar</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-medium text-navy-900">Innovatiesnelheid</td>
+                                <td class="p-4 text-gray-600">Best-of-breed, snelle adoptie van nieuwe tools</td>
+                                <td class="p-4 text-gray-600">Afhankelijk van &eacute;&eacute;n roadmap</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-4 font-medium text-navy-900">Wegiz-compliance</td>
+                                <td class="p-4 text-gray-600">Van nature compliant</td>
+                                <td class="p-4 text-gray-600">Aanpassingen nodig, onzeker tijdpad</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-medium text-navy-900">EHDS-gereedheid</td>
+                                <td class="p-4 text-gray-600">Voorbereid op Europese data-uitwisseling</td>
+                                <td class="p-4 text-gray-600">Risico op incompatibiliteit</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-4 font-medium text-navy-900">Totale kosten (5 jaar)</td>
+                                <td class="p-4 text-gray-600">Lagere TCO door concurrentie en hergebruik</td>
+                                <td class="p-4 text-gray-600">20-40% hogere TCO door afhankelijkheid</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-gray-600 leading-relaxed">De vergelijking laat een helder beeld zien: open standaarden bieden op elk criterium voordelen voor zorgorganisaties. Vendor lock-in kan op korte termijn eenvoudiger lijken (alles van &eacute;&eacute;n leverancier), maar de langetermijnkosten en -risico's zijn aanzienlijk.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- WEGIZ EN REGELGEVING                         -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-brand-light" aria-label="Regelgeving verplicht open standaarden">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-6">Regelgeving verplicht open standaarden</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-6">De keuze voor open standaarden is niet langer alleen strategisch verstandig. Het wordt wettelijk verplicht. De Wet elektronische gegevensuitwisseling in de zorg (Wegiz) schrijft voor dat zorgsystemen data moeten kunnen uitwisselen via gestandaardiseerde, open protocollen.</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-sm">01</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-navy-900 mb-2">Wegiz (Wet elektronische gegevensuitwisseling in de zorg)</h3>
+                            <p class="text-gray-600 leading-relaxed">Sinds 2023 in werking. Verplicht gefaseerd elektronische gegevensuitwisseling via open standaarden. Leveranciers die alleen proprietary koppelingen bieden, voldoen niet aan de wettelijke eisen.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-sm">02</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-navy-900 mb-2">IZA (Integraal Zorgakkoord)</h3>
+                            <p class="text-gray-600 leading-relaxed">Het IZA benadrukt regionale samenwerking en digitale gegevensuitwisseling als pijlers voor toekomstbestendige zorg. Organisaties die vastzitten aan gesloten systemen kunnen niet effectief deelnemen aan regionale netwerken.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-sm">03</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-navy-900 mb-2">EHDS (European Health Data Space)</h3>
+                            <p class="text-gray-600 leading-relaxed">De Europese verordening voor grensoverschrijdende zorgdata-uitwisseling. Verwacht vanaf 2026-2028 gefaseerd. Organisaties die nu investeren in open standaarden zijn voorbereid op Europese interoperabiliteit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- HOE CAREHUB DIT OPLOST                       -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white" aria-label="Hoe de CareHub-aanpak werkt">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">De CareHub-aanpak</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-6">Hoe kiest u toekomstbestendig? De CareHub-aanpak</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-8">Het <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-brand-blue hover:text-brand-blue-dark font-medium">CareHub-ecosysteem</a> is van de grond af gebouwd op open standaarden. Geen vendor lock-in, maar een integratielaag die uw bestaande systemen verbindt via FHIR, HL7 en REST API's. U behoudt keuzevrijheid en kunt op elk moment individuele componenten vervangen zonder het geheel te verstoren.</p>
+
+                <div class="grid sm:grid-cols-2 gap-6 mb-10">
+                    <div class="bg-brand-light rounded-xl p-6">
+                        <h3 class="text-base font-semibold text-navy-900 mb-3">Geen vervanging, maar verbinding</h3>
+                        <p class="text-sm text-gray-600">CareHub vervangt uw bestaande ECD of EPD niet. Het verbindt uw systemen via &eacute;&eacute;n integratielaag, zodat data naadloos stroomt tussen alle applicaties.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-6">
+                        <h3 class="text-base font-semibold text-navy-900 mb-3">Best-of-breed keuzevrijheid</h3>
+                        <p class="text-sm text-gray-600">Kies de beste oplossing per domein. Een gespecialiseerd GGZ-systeem naast een VVT-planningstools naast een telemonitoring-oplossing. CareHub zorgt dat ze samenwerken.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-6">
+                        <h3 class="text-base font-semibold text-navy-900 mb-3">Wegiz-compliant by design</h3>
+                        <p class="text-sm text-gray-600">Alle koppelingen in het CareHub-ecosysteem gebruiken FHIR en HL7. U voldoet automatisch aan de Wegiz-vereisten zonder extra investeringen.</p>
+                    </div>
+                    <div class="bg-brand-light rounded-xl p-6">
+                        <h3 class="text-base font-semibold text-navy-900 mb-3">Toekomstbestendig voor EHDS</h3>
+                        <p class="text-sm text-gray-600">De open architectuur van CareHub is voorbereid op de European Health Data Space. Uw organisatie kan straks naadloos aansluiten op Europese zorgnetwerken.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- VEELGESTELDE VRAGEN                          -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-brand-light" aria-label="Veelgestelde vragen">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 mb-8">Veelgestelde vragen</h2>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-100">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer">
+                            <h3 class="text-base font-semibold text-navy-900 pr-4">Kunnen we overstappen naar open standaarden zonder al onze systemen te vervangen?</h3>
+                            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-600 leading-relaxed">Ja. Een integratieplatform zoals CareHub werkt als een tussenlaag bovenop uw bestaande systemen. U hoeft geen systemen te vervangen. De integratielaag vertaalt uw huidige datastromen naar open standaarden (FHIR, HL7), waardoor uw systemen alsnog interoperabel worden.</p>
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-100">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer">
+                            <h3 class="text-base font-semibold text-navy-900 pr-4">Wat als onze huidige leverancier geen open standaarden ondersteunt?</h3>
+                            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-600 leading-relaxed">De Wegiz verplicht leveranciers om toe te werken naar open standaarden. Als uw leverancier hier niet aan voldoet, is dat een risico voor uw organisatie. Een integratieplatform kan als overbrugging dienen terwijl u geleidelijk overstapt naar leveranciers die w&eacute;l open standaarden ondersteunen.</p>
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-100">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer">
+                            <h3 class="text-base font-semibold text-navy-900 pr-4">Zijn open standaarden veilig genoeg voor zorgdata?</h3>
+                            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-600 leading-relaxed">"Open standaard" betekent niet "open data". De standaard beschrijft h&oacute;e data wordt uitgewisseld, niet d&aacute;t alle data openbaar is. FHIR heeft ingebouwde autorisatie- en authenticatiemechanismen (OAuth 2.0, SMART on FHIR). In combinatie met NEN 7510 en AVG-compliance is data-uitwisseling via open standaarden minstens zo veilig als via proprietary koppelingen.</p>
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-100">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer">
+                            <h3 class="text-base font-semibold text-navy-900 pr-4">Wat kost de overstap naar een open-standaarden architectuur?</h3>
+                            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </summary>
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-600 leading-relaxed">De ini&euml;le investering varieert per organisatie, maar is doorgaans lager dan een volledige systeemmigratie. Omdat open standaarden hergebruik van koppelingen mogelijk maken, dalen de integratiekosten na de eerste implementatie significant. Over een periode van 5 jaar is de totale eigendomskosten (TCO) 20-40% lager dan bij vendor lock-in.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONCLUSIE CTA                                -->
+        <!-- ============================================ -->
+        <section class="py-20 lg:py-28 bg-gradient-to-r from-brand-blue to-brand-blue-dark" aria-label="Call to action">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Klaar om vendor lock-in achter u te laten?</h2>
+                <p class="text-lg text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
+                    Ontdek hoe het CareHub-ecosysteem uw zorgorganisatie verbindt via open standaarden. Zonder vervanging van uw huidige systemen.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-brand-blue bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+                        Ontdek CareHub
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 hover:border-white/60 rounded-lg transition-all duration-200">
+                        Neem contact op
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pcdinvestmentpartners.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": "https://pcdinvestmentpartners.com/insights"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Open standaarden vs vendor lock-in",
+                "item": "https://pcdinvestmentpartners.com/open-standaarden-vs-vendor-lock-in"
+            }
+        ]
+    }
+    </script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Open standaarden vs vendor lock-in: wat betekent dit voor uw zorgorganisatie?",
+        "author": {
+            "@type": "Person",
+            "@id": "https://pcdinvestmentpartners.com/auteur-niels-roest#person",
+            "name": "Niels Roest",
+            "jobTitle": "CAIO & Chairman",
+            "url": "https://pcdinvestmentpartners.com/auteur-niels-roest"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PCD Investment Partners",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pcdinvestmentpartners.com/assets/logo/pcd-logo.webp"
+            }
+        },
+        "datePublished": "2026-03-12",
+        "dateModified": "2026-03-12",
+        "image": "https://pcdinvestmentpartners.com/assets/images/carehub-ecosystem-diagram.webp",
+        "url": "https://pcdinvestmentpartners.com/open-standaarden-vs-vendor-lock-in",
+        "description": "Vergelijking van open standaarden (FHIR, HL7) versus vendor lock-in in de Nederlandse zorg. Wat betekent dit voor uw zorgorganisatie en hoe kiest u toekomstbestendig?",
+        "mentions": [
+            {"@type": "DefinedTerm", "name": "FHIR", "url": "https://pcdinvestmentpartners.com/woordenlijst#fhir"},
+            {"@type": "DefinedTerm", "name": "HL7", "url": "https://pcdinvestmentpartners.com/woordenlijst#hl7"},
+            {"@type": "DefinedTerm", "name": "Interoperabiliteit", "url": "https://pcdinvestmentpartners.com/woordenlijst#interoperabiliteit"},
+            {"@type": "DefinedTerm", "name": "CareHub", "url": "https://pcdinvestmentpartners.com/woordenlijst#carehub"},
+            {"@type": "DefinedTerm", "name": "Vendor lock-in", "url": "https://pcdinvestmentpartners.com/woordenlijst#vendor-lock-in"}
+        ],
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["article h1", "article .text-lg"]
+        }
+    }
+    </script>
+{% endblock %}
