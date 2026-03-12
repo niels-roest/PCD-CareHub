@@ -517,6 +517,14 @@ for (const htmlFile of htmlFiles) {
 console.log(`  Updated ${htmlFiles.length} HTML files with hashed asset references`);
 
 // ============================================
+// 12. IndexNow key verification file
+// ============================================
+console.log('Creating IndexNow key file...');
+const indexNowKey = fs.readFileSync(path.join(SRC, 'indexnow-key.txt'), 'utf8').trim();
+fs.writeFileSync(path.join(DIST, `${indexNowKey}.txt`), indexNowKey);
+console.log(`  Created ${indexNowKey}.txt for IndexNow protocol`);
+
+// ============================================
 // Done
 // ============================================
 console.log(`\nBuild complete! ${totalPages} pages generated in dist/`);
