@@ -1,0 +1,108 @@
+---
+title: "Terms of Service | PCD Investment Partners"
+description: "Read the terms of service of PCD Investment Partners. Conditions for the use of our website and services."
+og_image: "assets/logo/pcd-logo-design-blauw-transparant-500x500.png"
+og_locale: "en_GB"
+slug: "algemene-voorwaarden"
+---
+<!-- ============================================ -->
+        <!-- BREADCRUMB                                   -->
+        <!-- ============================================ -->
+        <section class="bg-navy-900 pt-28 pb-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="breadcrumb mb-8 fade-in-up" aria-label="Breadcrumb">
+                    <ol class="flex items-center space-x-2 text-sm text-white/50">
+                        <li><a href="{{ langPrefix }}/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
+                        <li class="text-white" aria-current="page">Terms of Service</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PAGE HEADER                                  -->
+        <!-- ============================================ -->
+        <section class="bg-navy-900 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl sm:text-5xl font-bold text-white">Terms of Service</h1>
+                <p class="mt-4 text-lg text-white/60">Last updated: March 2026</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTENT                                      -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg text-gray-600">
+
+                <h2 class="text-2xl font-bold text-navy-900">1. Identification</h2>
+                <p>
+                    This website is operated by <strong>PCD Investment Partners</strong>, registered at Lijndonk 4, 4812 EL Breda, the Netherlands. Chamber of Commerce number: 94498136.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">2. Applicability</h2>
+                <p>
+                    These terms of service apply to the use of the website pcdinvestmentpartners.com and all its subdomains. By using this website, you agree to these terms.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">3. Intellectual property</h2>
+                <p>
+                    All content on this website &mdash; including texts, images, logos, graphic design, software and other materials &mdash; is the property of PCD Investment Partners or its licensors and is protected by copyright and other intellectual property rights. Nothing on this website may be reproduced, stored or published without prior written permission.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">4. No investment advice</h2>
+                <p>
+                    The information on this website is intended solely for general information purposes and does not constitute investment advice, an offer or an invitation to buy or sell financial instruments. PCD Investment Partners is not registered as an investment firm within the meaning of the Dutch Financial Supervision Act (Wft). For investment decisions, always consult a qualified financial adviser.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">5. Liability</h2>
+                <p>
+                    PCD Investment Partners endeavours to keep the information on this website up to date and accurate, but makes no warranties as to the completeness, accuracy or currency of the information provided. PCD Investment Partners is not liable for any damages arising from the use of this website or the inability to use this website.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">6. Third-party links</h2>
+                <p>
+                    This website may contain links to third-party websites. PCD Investment Partners has no control over the content of these websites and accepts no responsibility for the content, privacy policies or practices of third-party websites.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">7. Privacy</h2>
+                <p>
+                    Our handling of personal data is described in our <a href="{{ langPrefix }}/privacyverklaring" class="text-brand-blue hover:text-brand-blue-dark">privacy policy</a>. Our cookie policy is described in the <a href="{{ langPrefix }}/cookiebeleid-eu" class="text-brand-blue hover:text-brand-blue-dark">cookie policy</a>.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">8. Governing law</h2>
+                <p>
+                    These terms are governed by Dutch law. Disputes shall be submitted to the competent court in Breda.
+                </p>
+
+                <h2 class="text-2xl font-bold text-navy-900 mt-12">9. Contact</h2>
+                <p>
+                    For questions regarding these terms, please get in touch via <a href="{{ langPrefix }}/contact" class="text-brand-blue hover:text-brand-blue-dark">our contact page</a> or by e-mail at info@pcdinvestmentpartners.com.
+                </p>
+
+            </div>
+        </section>
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pcdinvestmentpartners.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Terms of Service",
+            "item": "{{ canonical }}"
+        }
+    ]
+}
+</script>
+{% endblock %}
