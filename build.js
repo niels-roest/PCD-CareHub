@@ -310,7 +310,15 @@ let sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
 sitemapXml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
 sitemapXml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
-for (const [pageName, entries] of Object.entries(pageGroups)) {
+// Sort: homepage (index) first, then alphabetically
+const sortedPageNames = Object.keys(pageGroups).sort((a, b) => {
+  if (a === 'index') return -1;
+  if (b === 'index') return 1;
+  return a.localeCompare(b);
+});
+
+for (const pageName of sortedPageNames) {
+  const entries = pageGroups[pageName];
   for (const entry of entries) {
     sitemapXml += '    <url>\n';
     sitemapXml += `        <loc>${entry.url}</loc>\n`;
