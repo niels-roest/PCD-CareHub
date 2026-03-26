@@ -118,5 +118,10 @@
     "en": "buy-and-build-vs-traditional-acquisition",
     "es": "buy-and-build-vs-adquisicion-tradicional",
     "pt-br": "buy-and-build-vs-aquisicao-tradicional"
+  },
+  "insight-nen-7510-avg-compliance-zorgtechnologie": {
+    "en": "insight-nen-7510-gdpr-compliance-healthtech",
+    "es": "insight-nen-7510-rgpd-compliance-tecnologia-sanitaria",
+    "pt-br": "insight-nen-7510-lgpd-compliance-tecnologia-saude"
   }
 }
