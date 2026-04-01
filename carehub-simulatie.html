@@ -119,7 +119,7 @@
               <div class="text-xs font-bold text-orange-700">GROWTIVITY</div>
               <div class="text-xs text-orange-600 mt-1">Intake · Wachtlijst · Matching</div>
             </div>
-            <div class="text-xs text-gray-400 text-center">+18% capaciteit · −3% vraag</div>
+            <div class="text-xs text-gray-400 text-center">+4% capaciteit · −1% vraag</div>
           </div>
 
           <div class="text-xl font-bold text-brand-blue self-center">&rarr;</div>
@@ -129,7 +129,7 @@
               <div class="text-xs font-bold text-amber-700">SYNTILLIO</div>
               <div class="text-xs text-amber-600 mt-1">AI-triage · Remote monitoring</div>
             </div>
-            <div class="text-xs text-gray-400 text-center">−<span id="flowDiversionPct">25</span>% vraag · +5% capaciteit</div>
+            <div class="text-xs text-gray-400 text-center">−<span id="flowDiversionPct">25</span>% triage-diversion · +2% capaciteit</div>
           </div>
 
           <div class="text-xl font-bold text-brand-blue self-center">&rarr;</div>
@@ -174,8 +174,8 @@
             <h3 class="font-semibold text-gray-900">Growtivity</h3>
           </div>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> +18% behandelcapaciteit (admin −2u/week, no-shows −30%, betere matching)</li>
-            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> −3% vraag (hogere intakekwaliteit, minder verkeerde plaatsingen)</li>
+            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> +4% behandelcapaciteit (admin −2u/week, no-shows −30%, betere matching)</li>
+            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> −1% vraag (hogere intakekwaliteit, minder verkeerde plaatsingen)</li>
             <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 3, volledig effect na 12 maanden</li>
           </ul>
         </div>
@@ -186,7 +186,7 @@
             <h3 class="font-semibold text-gray-900">Syntillio (bovenop A)</h3>
           </div>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> +5% extra capaciteit (kortere trajecten via remote monitoring)</li>
+            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> +2% extra capaciteit (kortere trajecten via remote monitoring)</li>
             <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> −<span id="cardDiversionPct" class="font-semibold text-amber-700">25</span>% vraag via AI-triage (instelbaar)</li>
             <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 6, volledig effect na 12 maanden</li>
           </ul>
@@ -198,8 +198,8 @@
             <h3 class="font-semibold text-gray-900">Overheidssteun (bovenop B)</h3>
           </div>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> +6% extra capaciteit (IZA-transformatiegeld, meer organisaties)</li>
-            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> −3% extra vraag (preventief beleid AZWA 2025)</li>
+            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> +1.5% extra capaciteit (IZA-transformatiegeld, meer organisaties)</li>
+            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> −0.5% extra vraag (preventief beleid AZWA 2025)</li>
             <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 3, snellere adoptie (8 maanden)</li>
           </ul>
         </div>
@@ -210,8 +210,8 @@
             <h3 class="font-semibold text-gray-900">Verzekeraarssteun (bovenop C)</h3>
           </div>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> +6% extra capaciteit (VGZ Voorop in Zorg €60M)</li>
-            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> −4% extra vraag (preventieve zorg gefinancierd door verzekeraars)</li>
+            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> +0.7% extra capaciteit (VGZ Voorop in Zorg €60M)</li>
+            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> −0.8% extra vraag (preventieve zorg gefinancierd door verzekeraars)</li>
             <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 1, snelste adoptie (6 maanden)</li>
           </ul>
         </div>
@@ -240,9 +240,10 @@
           <tbody>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Initiële wachttijd</td><td class="p-3 font-medium">42.9 dagen</td><td class="p-3 text-gray-500">NZa Wachttijdrapportage 2025, Basis GGZ gemiddelde</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Patiënten op wachtlijst</td><td class="p-3 font-medium">~100.000</td><td class="p-3 text-gray-500">NZa / GGZ Nederland 2025</td></tr>
-            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Modelmaand instroom</td><td class="p-3 font-medium">10.000/mnd</td><td class="p-3 text-gray-500">Intern consistent met 42.9d startwaarde</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Modelmaand instroom</td><td class="p-3 font-medium">10.500/mnd</td><td class="p-3 text-gray-500">Structureel tekort van 700 pt/mnd (instroom &gt; capaciteit)</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Overheidsstreefwaarde</td><td class="p-3 font-medium">&le; 21 dagen</td><td class="p-3 text-gray-500">IZA-akkoord 2022, AZWA 2025</td></tr>
-            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Growtivity capaciteitseffect</td><td class="p-3 font-medium">+18%</td><td class="p-3 text-gray-500">Admin −2u/week/behandelaar, no-show −30%, betere matching</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Vraaggroei (vergrijzing)</td><td class="p-3 font-medium">+0.2%/mnd (~2.4%/jaar)</td><td class="p-3 text-gray-500">CBS Bevolkingsprognose 2025, toenemende GGZ-vraag door vergrijzing en psychische belasting</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Growtivity capaciteitseffect</td><td class="p-3 font-medium">+4%</td><td class="p-3 text-gray-500">Admin −2u/week/behandelaar, no-show −30%, betere matching (conservatief)</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Syntillio triage-diversion</td><td class="p-3 font-medium">15–40%</td><td class="p-3 text-gray-500">Conservatief 15% (RIVM), middelmatig 25% (ZN benchmark), optimistisch 40% — <strong>te valideren 3 april 2026</strong></td></tr>
             <tr class="hover:bg-gray-50"><td class="p-3 text-gray-700">Siemens Healthineers</td><td class="p-3 font-medium">Toekomstscenario</td><td class="p-3 text-gray-500">Niet gemodelleerd; meest relevant voor MSZ/ziekenhuis, niet GGZ</td></tr>
           </tbody>
@@ -270,14 +271,15 @@
     (function () {
       'use strict';
 
-      var BASE = { monthlyDemand: 10000, monthlyCapacity: 9800, initialQueue: 14000, months: 36 };
+      var BASE = { monthlyDemand: 10500, monthlyCapacity: 9800, initialQueue: 14000, months: 36, demandGrowth: 0.002 };
+      var DIV_SCALE = 0.35;
 
       var DEFS = [
         { id: 'baseline', label: 'Baseline',   sublabel: 'Geen interventie',   color: '#ef4444', capMult: 1.000, startMonth: 0, rampMonths: 1  },
-        { id: 'A',        label: 'Scenario A', sublabel: '+ Growtivity',        color: '#f97316', capMult: 1.180, startMonth: 3, rampMonths: 12 },
-        { id: 'B',        label: 'Scenario B', sublabel: '+ Syntillio',         color: '#d97706', capMult: 1.239, startMonth: 6, rampMonths: 12 },
-        { id: 'C',        label: 'Scenario C', sublabel: '+ Overheidssteun',    color: '#22c55e', capMult: 1.313, startMonth: 3, rampMonths: 8  },
-        { id: 'D',        label: 'Scenario D', sublabel: '+ Verzekeraarssteun', color: '#046bd2', capMult: 1.392, startMonth: 1, rampMonths: 6  }
+        { id: 'A',        label: 'Scenario A', sublabel: '+ Growtivity',        color: '#f97316', capMult: 1.040, startMonth: 3, rampMonths: 12 },
+        { id: 'B',        label: 'Scenario B', sublabel: '+ Syntillio',         color: '#d97706', capMult: 1.060, startMonth: 3, rampMonths: 15 },
+        { id: 'C',        label: 'Scenario C', sublabel: '+ Overheidssteun',    color: '#22c55e', capMult: 1.075, startMonth: 3, rampMonths: 12 },
+        { id: 'D',        label: 'Scenario D', sublabel: '+ Verzekeraarssteun', color: '#046bd2', capMult: 1.082, startMonth: 1, rampMonths: 18 }
       ];
 
       function buildScenarios(divPct) {
@@ -285,10 +287,10 @@
         return DEFS.map(function (s) {
           var dem;
           if      (s.id === 'baseline') dem = 1.000;
-          else if (s.id === 'A')        dem = 0.97;
-          else if (s.id === 'B')        dem = 0.97 * (1 - div);
-          else if (s.id === 'C')        dem = 0.97 * (1 - div) * 0.97;
-          else                          dem = 0.97 * (1 - div) * 0.97 * 0.96;
+          else if (s.id === 'A')        dem = 0.990;
+          else if (s.id === 'B')        dem = 0.990 * (1 - div * DIV_SCALE);
+          else if (s.id === 'C')        dem = 0.990 * (1 - div * DIV_SCALE) * 0.995;
+          else                          dem = 0.990 * (1 - div * DIV_SCALE) * 0.995 * 0.992;
           return Object.assign({}, s, { demMult: dem });
         });
       }
@@ -302,7 +304,8 @@
             ? (elapsed >= 0 ? 1 : 0)
             : Math.min(1, Math.max(0, elapsed / sc.rampMonths));
           var cap = BASE.monthlyCapacity * (1 + (sc.capMult - 1) * prog);
-          var dem = BASE.monthlyDemand * (1 - (1 - sc.demMult) * prog);
+          var baseDem = BASE.monthlyDemand * Math.pow(1 + BASE.demandGrowth, m);
+          var dem = baseDem * (1 - (1 - sc.demMult) * prog);
           queue = Math.max(0, queue + dem - cap);
           out.push(Math.round((queue / cap) * 30 * 10) / 10);
         }
@@ -366,7 +369,7 @@
             },
             scales: {
               x: { grid: { display: false }, ticks: { font: { size: 11 }, maxRotation: 0, autoSkip: false } },
-              y: { min: 0, suggestedMax: 65,
+              y: { min: 0, suggestedMax: 170,
                    title: { display: true, text: 'Wachttijd (dagen)', font: { size: 12 } },
                    grid: { color: 'rgba(0,0,0,0.05)' },
                    ticks: { font: { size: 11 } } }
