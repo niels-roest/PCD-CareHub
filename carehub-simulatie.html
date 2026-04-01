@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub Patiëntstroom Simulatie — PCD Investment Partners</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy-900': '#0a1628', 'navy-800': '#0f1f3d', 'navy-700': '#152a4a',
+            'brand-blue': '#046bd2', 'brand-blue-dark': '#045cb4', 'brand-light': '#f4f6f8'
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .scenario-btn { transition: all 0.15s ease; }
+    .scenario-btn.active { box-shadow: 0 2px 10px rgba(0,0,0,0.2); transform: translateY(-1px); }
+    input[type=range] { accent-color: #046bd2; cursor: pointer; }
+    .metric-card { transition: border-color 0.15s, box-shadow 0.15s; cursor: pointer; }
+    #assumptionsArrow { display: inline-block; transition: transform 0.2s; }
+  </style>
+</head>
+<body class="bg-brand-light">
+
+  <!-- HEADER -->
+  <header class="bg-navy-900 py-4 px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <img src="assets/logo/pcd-logo.png" alt="PCD Investment Partners" class="h-10 w-auto">
+      <span class="text-xs font-semibold text-amber-300 bg-amber-900/30 border border-amber-600/40 px-3 py-1 rounded-full uppercase tracking-wider">
+        Vertrouwelijk — Intern gebruik
+      </span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-navy-800 text-white py-14 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs font-semibold text-brand-blue bg-brand-blue/10 border border-brand-blue/20 px-3 py-1 rounded-full uppercase tracking-wider">Strategische Simulatie</span>
+      <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-4 leading-tight">CareHub Patiëntstroom Simulatie</h1>
+      <p class="text-lg text-gray-300 max-w-3xl leading-relaxed">
+        Hoe evolueert de GGZ-wachttijd van 2026 tot 2028 naarmate het CareHub-ecosysteem stap voor stap wordt uitgebouwd?
+        Startpunt: <strong class="text-white">42 dagen</strong> gemiddeld, <strong class="text-white">100.000+</strong> patiënten op de wachtlijst.
+        Overheidsstreefwaarde (IZA/AZWA): <strong class="text-white">&le; 21 dagen</strong> voor eind 2028.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTROLS (sticky) -->
+  <div class="bg-white border-b border-gray-200 py-5 px-6 sticky top-0 z-20 shadow-sm">
+    <div class="max-w-7xl mx-auto space-y-4">
+      <div class="flex flex-wrap gap-2" id="scenarioBtns"></div>
+      <div class="flex flex-wrap items-center gap-3">
+        <label class="text-sm font-medium text-gray-700 whitespace-nowrap">Syntillio triage-diversion:</label>
+        <input type="range" id="diversionSlider" min="15" max="40" value="25" step="1" class="w-44">
+        <span id="diversionLabel" class="text-sm font-bold text-brand-blue w-10">25%</span>
+        <span class="text-xs text-gray-400">Aandeel patiënten omgeleid naar licht digitaal zorgpad (15–40%)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART + METRICS -->
+  <section class="py-10 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Wachttijd ontwikkeling 2026–2028</h2>
+            <p class="text-sm text-gray-500">Gemiddelde wachttijd in dagen, per scenario</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+            Overheidsdoel (21 dagen)
+          </div>
+        </div>
+        <div style="position:relative;height:360px;">
+          <canvas id="waitChart"></canvas>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider px-1">Uitkomst Q4 2028</p>
+        <div id="metricsPanel" class="space-y-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATIENT FLOW -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Patiëntreis door het ecosysteem</h2>
+      <p class="text-gray-600 mb-8">Van verwijzing tot behandeling — elke schakel in het model</p>
+      <div class="overflow-x-auto pb-4">
+        <div class="flex items-center gap-3 min-w-max">
+
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-28 h-20 rounded-xl bg-gray-50 border-2 border-gray-300 flex flex-col items-center justify-center px-2 text-center">
+              <div class="text-xs font-bold text-gray-600">Huisarts</div>
+              <div class="text-xs text-gray-400 mt-1">ZorgDomein verwijzing</div>
+            </div>
+          </div>
+
+          <div class="text-xl font-bold text-brand-blue self-center">&rarr;</div>
+
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-40 h-20 rounded-xl bg-orange-50 border-2 border-orange-400 flex flex-col items-center justify-center px-2 text-center">
+              <div class="text-xs font-bold text-orange-700">GROWTIVITY</div>
+              <div class="text-xs text-orange-600 mt-1">Intake · Wachtlijst · Matching</div>
+            </div>
+            <div class="text-xs text-gray-400 text-center">+18% capaciteit · −3% vraag</div>
+          </div>
+
+          <div class="text-xl font-bold text-brand-blue self-center">&rarr;</div>
+
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-40 h-20 rounded-xl bg-amber-50 border-2 border-amber-400 flex flex-col items-center justify-center px-2 text-center">
+              <div class="text-xs font-bold text-amber-700">SYNTILLIO</div>
+              <div class="text-xs text-amber-600 mt-1">AI-triage · Remote monitoring</div>
+            </div>
+            <div class="text-xs text-gray-400 text-center">−<span id="flowDiversionPct">25</span>% vraag · +5% capaciteit</div>
+          </div>
+
+          <div class="text-xl font-bold text-brand-blue self-center">&rarr;</div>
+
+          <div class="flex flex-col gap-2 self-center">
+            <div class="w-44 h-9 rounded-lg bg-green-50 border border-green-300 flex items-center justify-center">
+              <span class="text-xs font-medium text-green-700"><span id="flowDigitalPct">25</span>% Digitale zorg (licht)</span>
+            </div>
+            <div class="w-44 h-9 rounded-lg bg-blue-50 border border-brand-blue/30 flex items-center justify-center">
+              <span class="text-xs font-medium text-navy-700"><span id="flowGgzPct">75</span>% GGZ behandeling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-navy-900 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div class="text-sm font-bold text-white">CAREHUB — Centrale Integratiehub</div>
+          <div class="text-xs text-gray-400 mt-1">Verbindt alle systemen en deelt integraties over het gehele portfolio</div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-navy-700 text-gray-300 px-3 py-1 rounded-full">HiX</span>
+          <span class="text-xs bg-navy-700 text-gray-300 px-3 py-1 rounded-full">Nexus</span>
+          <span class="text-xs bg-navy-700 text-gray-300 px-3 py-1 rounded-full">ONS</span>
+          <span class="text-xs bg-navy-700 text-gray-300 px-3 py-1 rounded-full">ZorgDomein</span>
+          <span class="text-xs bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full border border-brand-blue/30">+ Siemens (toekomst)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENARIO CARDS -->
+  <section class="py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Modelaannames per scenario</h2>
+      <p class="text-gray-600 mb-8">Elk scenario is cumulatief — D bevat alle effecten van A, B en C.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-orange-400 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-sm">A</span>
+            <h3 class="font-semibold text-gray-900">Growtivity</h3>
+          </div>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> +18% behandelcapaciteit (admin −2u/week, no-shows −30%, betere matching)</li>
+            <li class="flex gap-2"><span class="text-orange-500 flex-shrink-0">+</span> −3% vraag (hogere intakekwaliteit, minder verkeerde plaatsingen)</li>
+            <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 3, volledig effect na 12 maanden</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-amber-400 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-sm">B</span>
+            <h3 class="font-semibold text-gray-900">Syntillio (bovenop A)</h3>
+          </div>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> +5% extra capaciteit (kortere trajecten via remote monitoring)</li>
+            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> −<span id="cardDiversionPct" class="font-semibold text-amber-700">25</span>% vraag via AI-triage (instelbaar)</li>
+            <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 6, volledig effect na 12 maanden</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-green-500 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-sm">C</span>
+            <h3 class="font-semibold text-gray-900">Overheidssteun (bovenop B)</h3>
+          </div>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> +6% extra capaciteit (IZA-transformatiegeld, meer organisaties)</li>
+            <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">+</span> −3% extra vraag (preventief beleid AZWA 2025)</li>
+            <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 3, snellere adoptie (8 maanden)</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-brand-blue shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue font-bold text-sm">D</span>
+            <h3 class="font-semibold text-gray-900">Verzekeraarssteun (bovenop C)</h3>
+          </div>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> +6% extra capaciteit (VGZ Voorop in Zorg €60M)</li>
+            <li class="flex gap-2"><span class="text-brand-blue flex-shrink-0">+</span> −4% extra vraag (preventieve zorg gefinancierd door verzekeraars)</li>
+            <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 1, snelste adoptie (6 maanden)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSUMPTIONS -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Aannames &amp; bronnen</h2>
+      <p class="text-gray-600 mb-6">Strategische richting, geen precieze voorspelling. Syntillio-diversion te bevestigen op 3 april 2026.</p>
+      <button id="toggleAssumptions" class="flex items-center gap-2 text-sm font-medium text-brand-blue mb-4 hover:underline">
+        <span id="assumptionsArrow">&#9654;</span>
+        Toon modelaannames
+      </button>
+      <div id="assumptionsTable" class="hidden overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-brand-light">
+              <th class="text-left p-3 font-semibold text-gray-700 border-b border-gray-200">Variabele</th>
+              <th class="text-left p-3 font-semibold text-gray-700 border-b border-gray-200">Waarde</th>
+              <th class="text-left p-3 font-semibold text-gray-700 border-b border-gray-200">Bron / toelichting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Initiële wachttijd</td><td class="p-3 font-medium">42.9 dagen</td><td class="p-3 text-gray-500">NZa Wachttijdrapportage 2025, Basis GGZ gemiddelde</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Patiënten op wachtlijst</td><td class="p-3 font-medium">~100.000</td><td class="p-3 text-gray-500">NZa / GGZ Nederland 2025</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Modelmaand instroom</td><td class="p-3 font-medium">10.000/mnd</td><td class="p-3 text-gray-500">Intern consistent met 42.9d startwaarde</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Overheidsstreefwaarde</td><td class="p-3 font-medium">&le; 21 dagen</td><td class="p-3 text-gray-500">IZA-akkoord 2022, AZWA 2025</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Growtivity capaciteitseffect</td><td class="p-3 font-medium">+18%</td><td class="p-3 text-gray-500">Admin −2u/week/behandelaar, no-show −30%, betere matching</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Syntillio triage-diversion</td><td class="p-3 font-medium">15–40%</td><td class="p-3 text-gray-500">Conservatief 15% (RIVM), middelmatig 25% (ZN benchmark), optimistisch 40% — <strong>te valideren 3 april 2026</strong></td></tr>
+            <tr class="hover:bg-gray-50"><td class="p-3 text-gray-700">Siemens Healthineers</td><td class="p-3 font-medium">Toekomstscenario</td><td class="p-3 text-gray-500">Niet gemodelleerd; meest relevant voor MSZ/ziekenhuis, niet GGZ</td></tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-400 mt-4 italic">Eenvoudige maandelijkse wachtrijsimulatie. Werkelijkheid is complexer (regionale variatie, GGZ-type, specialisatie). Aannames herzien na dataverzameling bij Syntillio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white py-8 px-6">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="font-semibold text-sm">PCD Investment Partners</div>
+        <div class="text-xs text-gray-400 mt-1">Lijndonk 4, Breda &middot; pcdinvestmentpartners.com</div>
+      </div>
+      <div class="text-xs text-right">
+        <div class="text-amber-300 font-semibold uppercase tracking-wider">Vertrouwelijk — Intern gebruik</div>
+        <div class="text-gray-400 mt-1">Versie 1.0 &middot; April 2026 &middot; Strategische simulatie, geen financieel advies</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var BASE = { monthlyDemand: 10000, monthlyCapacity: 9800, initialQueue: 14000, months: 36 };
+
+      var DEFS = [
+        { id: 'baseline', label: 'Baseline',   sublabel: 'Geen interventie',   color: '#ef4444', capMult: 1.000, startMonth: 0, rampMonths: 1  },
+        { id: 'A',        label: 'Scenario A', sublabel: '+ Growtivity',        color: '#f97316', capMult: 1.180, startMonth: 3, rampMonths: 12 },
+        { id: 'B',        label: 'Scenario B', sublabel: '+ Syntillio',         color: '#d97706', capMult: 1.239, startMonth: 6, rampMonths: 12 },
+        { id: 'C',        label: 'Scenario C', sublabel: '+ Overheidssteun',    color: '#22c55e', capMult: 1.313, startMonth: 3, rampMonths: 8  },
+        { id: 'D',        label: 'Scenario D', sublabel: '+ Verzekeraarssteun', color: '#046bd2', capMult: 1.392, startMonth: 1, rampMonths: 6  }
+      ];
+
+      function buildScenarios(divPct) {
+        var div = divPct / 100;
+        return DEFS.map(function (s) {
+          var dem;
+          if      (s.id === 'baseline') dem = 1.000;
+          else if (s.id === 'A')        dem = 0.97;
+          else if (s.id === 'B')        dem = 0.97 * (1 - div);
+          else if (s.id === 'C')        dem = 0.97 * (1 - div) * 0.97;
+          else                          dem = 0.97 * (1 - div) * 0.97 * 0.96;
+          return Object.assign({}, s, { demMult: dem });
+        });
+      }
+
+      function simulate(sc) {
+        var queue = BASE.initialQueue;
+        var out = [];
+        for (var m = 0; m < BASE.months; m++) {
+          var elapsed = m - sc.startMonth;
+          var prog = sc.rampMonths <= 1
+            ? (elapsed >= 0 ? 1 : 0)
+            : Math.min(1, Math.max(0, elapsed / sc.rampMonths));
+          var cap = BASE.monthlyCapacity * (1 + (sc.capMult - 1) * prog);
+          var dem = BASE.monthlyDemand * (1 - (1 - sc.demMult) * prog);
+          queue = Math.max(0, queue + dem - cap);
+          out.push(Math.round((queue / cap) * 30 * 10) / 10);
+        }
+        return out;
+      }
+
+      var NL_M = ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+      var labels = [];
+      for (var i = 0; i < 36; i++) {
+        var mi = i % 12, yr = 2026 + Math.floor(i / 12);
+        labels.push((mi === 0 || mi === 6) ? NL_M[mi] + ' ' + yr : '');
+      }
+
+      var activeId = 'D', divPct = 25, chart;
+
+      function rgba(hex, a) {
+        var h = hex.replace('#','');
+        return 'rgba(' + parseInt(h.slice(0,2),16) + ',' + parseInt(h.slice(2,4),16) + ',' + parseInt(h.slice(4,6),16) + ',' + a + ')';
+      }
+
+      function buildDatasets(scenarios) {
+        var ds = scenarios.map(function (sc) {
+          var active = sc.id === activeId;
+          return {
+            label: sc.label + ': ' + sc.sublabel,
+            data: simulate(sc),
+            borderColor: active ? sc.color : rgba(sc.color, 0.28),
+            backgroundColor: 'transparent',
+            borderWidth: active ? 3 : 1.5,
+            pointRadius: 0,
+            tension: 0.35,
+            order: active ? 0 : 1
+          };
+        });
+        ds.push({
+          label: 'Overheidsdoel (21 dagen)',
+          data: Array(36).fill(21),
+          borderColor: 'rgba(120,120,120,0.4)',
+          backgroundColor: 'transparent',
+          borderWidth: 1.5,
+          borderDash: [6, 4],
+          pointRadius: 0,
+          tension: 0,
+          order: 99
+        });
+        return ds;
+      }
+
+      function initChart(scenarios) {
+        var ctx = document.getElementById('waitChart').getContext('2d');
+        chart = new Chart(ctx, {
+          type: 'line',
+          data: { labels: labels, datasets: buildDatasets(scenarios) },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+              legend: { position: 'bottom', labels: { boxWidth: 14, padding: 14, font: { size: 11, family: 'Inter' } } },
+              tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + c.parsed.y + ' dagen'; } } }
+            },
+            scales: {
+              x: { grid: { display: false }, ticks: { font: { size: 11 }, maxRotation: 0, autoSkip: false } },
+              y: { min: 0, suggestedMax: 65,
+                   title: { display: true, text: 'Wachttijd (dagen)', font: { size: 12 } },
+                   grid: { color: 'rgba(0,0,0,0.05)' },
+                   ticks: { font: { size: 11 } } }
+            }
+          }
+        });
+      }
+
+      function renderBtns(scenarios) {
+        var c = document.getElementById('scenarioBtns');
+        c.innerHTML = '';
+        scenarios.forEach(function (sc) {
+          var active = sc.id === activeId;
+          var btn = document.createElement('button');
+          btn.className = 'scenario-btn flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border-2 ' +
+            (active ? 'text-white active' : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300');
+          if (active) { btn.style.backgroundColor = sc.color; btn.style.borderColor = sc.color; }
+          btn.innerHTML = '<span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background:' + sc.color + ';opacity:' + (active ? 0.7 : 1) + '"></span>' +
+            '<span>' + sc.label + '</span><span class="text-xs opacity-60 hidden md:inline">' + sc.sublabel + '</span>';
+          btn.addEventListener('click', function () { activeId = sc.id; updateAll(); });
+          c.appendChild(btn);
+        });
+      }
+
+      function renderMetrics(scenarios) {
+        var panel = document.getElementById('metricsPanel');
+        panel.innerHTML = '';
+        scenarios.forEach(function (sc) {
+          var data = simulate(sc);
+          var final = data[35];
+          var met = final <= 21;
+          var red = Math.round((1 - final / 42.9) * 100);
+          var active = sc.id === activeId;
+          var card = document.createElement('div');
+          card.className = 'metric-card bg-white rounded-xl p-4 border-2 ' + (active ? 'shadow-md' : 'border-gray-200 hover:shadow-sm');
+          if (active) card.style.borderColor = sc.color;
+          card.innerHTML =
+            '<div class="flex items-center justify-between mb-1">' +
+              '<div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:' + sc.color + '"></span>' +
+              '<span class="text-xs font-semibold text-gray-500">' + sc.label + '</span></div>' +
+              '<span class="text-xs font-semibold px-2 py-0.5 rounded-full ' + (met ? 'bg-green-100 text-green-700' : 'bg-red-50 text-red-600') + '">' +
+              (met ? '&#10003; Gehaald' : '&#10007; Niet gehaald') + '</span>' +
+            '</div>' +
+            '<div class="text-xs text-gray-500 mb-2">' + sc.sublabel + '</div>' +
+            '<div class="text-2xl font-bold" style="color:' + sc.color + '">' + final + ' <span class="text-sm font-normal text-gray-400">dagen</span></div>' +
+            '<div class="text-xs text-gray-400 mt-1">' + (red > 0 ? '−' + red + '%' : '+' + Math.abs(red) + '%') + ' t.o.v. start (42.9d)</div>';
+          card.addEventListener('click', function () { activeId = sc.id; updateAll(); });
+          panel.appendChild(card);
+        });
+      }
+
+      function updateFlow(div) {
+        document.getElementById('flowDiversionPct').textContent = div;
+        document.getElementById('flowDigitalPct').textContent = div;
+        document.getElementById('flowGgzPct').textContent = 100 - div;
+        document.getElementById('cardDiversionPct').textContent = div;
+      }
+
+      function updateAll() {
+        var sc = buildScenarios(divPct);
+        renderBtns(sc);
+        chart.data.datasets = buildDatasets(sc);
+        chart.update();
+        renderMetrics(sc);
+        updateFlow(divPct);
+      }
+
+      document.getElementById('diversionSlider').addEventListener('input', function () {
+        divPct = parseInt(this.value, 10);
+        document.getElementById('diversionLabel').textContent = divPct + '%';
+        updateAll();
+      });
+
+      document.getElementById('toggleAssumptions').addEventListener('click', function () {
+        var t = document.getElementById('assumptionsTable');
+        var a = document.getElementById('assumptionsArrow');
+        t.classList.toggle('hidden');
+        a.style.transform = t.classList.contains('hidden') ? '' : 'rotate(90deg)';
+      });
+
+      var init = buildScenarios(divPct);
+      initChart(init);
+      renderBtns(init);
+      renderMetrics(init);
+
+    }());
+  </script>
+</body>
+</html>
