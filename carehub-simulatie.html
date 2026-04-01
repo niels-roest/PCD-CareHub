@@ -52,7 +52,7 @@
       <p class="text-lg text-gray-300 max-w-3xl leading-relaxed">
         Hoe evolueert de GGZ-wachttijd van 2026 tot 2028 naarmate het CareHub-ecosysteem stap voor stap wordt uitgebouwd?
         Startpunt: <strong class="text-white">42 dagen</strong> gemiddeld, <strong class="text-white">100.000+</strong> patiënten op de wachtlijst.
-        Overheidsstreefwaarde (IZA/AZWA): <strong class="text-white">&le; 21 dagen</strong> voor eind 2028.
+        Treeknorm aanmeldwachttijd: <strong class="text-white">&le; 28 dagen</strong> (4 weken).
       </p>
     </div>
   </section>
@@ -82,7 +82,7 @@
           </div>
           <div class="flex items-center gap-2 text-xs text-gray-500">
             <svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
-            Overheidsdoel (21 dagen)
+            Treeknorm (28 dagen)
           </div>
         </div>
         <div style="position:relative;height:360px;">
@@ -241,7 +241,7 @@
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Initiële wachttijd</td><td class="p-3 font-medium">42.9 dagen</td><td class="p-3 text-gray-500">NZa Wachttijdrapportage 2025, Basis GGZ gemiddelde</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Patiënten op wachtlijst</td><td class="p-3 font-medium">~100.000</td><td class="p-3 text-gray-500">NZa / GGZ Nederland 2025</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Modelmaand instroom</td><td class="p-3 font-medium">10.500/mnd</td><td class="p-3 text-gray-500">Structureel tekort van 700 pt/mnd (instroom &gt; capaciteit)</td></tr>
-            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Overheidsstreefwaarde</td><td class="p-3 font-medium">&le; 21 dagen</td><td class="p-3 text-gray-500">IZA-akkoord 2022, AZWA 2025</td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Treeknorm aanmeldwachttijd</td><td class="p-3 font-medium">&le; 28 dagen (4 weken)</td><td class="p-3 text-gray-500">Treeknorm 2000, bevestigd in IZA-akkoord 2022 (NZa handhaving)</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Vraaggroei (vergrijzing)</td><td class="p-3 font-medium">+0.2%/mnd (~2.4%/jaar)</td><td class="p-3 text-gray-500">CBS Bevolkingsprognose 2025, toenemende GGZ-vraag door vergrijzing en psychische belasting</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Growtivity capaciteitseffect</td><td class="p-3 font-medium">+4%</td><td class="p-3 text-gray-500">Admin −2u/week/behandelaar, no-show −30%, betere matching (conservatief)</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Syntillio triage-diversion</td><td class="p-3 font-medium">15–40%</td><td class="p-3 text-gray-500">Conservatief 15% (RIVM), middelmatig 25% (ZN benchmark), optimistisch 40% — <strong>te valideren 3 april 2026</strong></td></tr>
@@ -341,8 +341,8 @@
           };
         });
         ds.push({
-          label: 'Overheidsdoel (21 dagen)',
-          data: Array(36).fill(21),
+          label: 'Treeknorm (28 dagen)',
+          data: Array(36).fill(28),
           borderColor: 'rgba(120,120,120,0.4)',
           backgroundColor: 'transparent',
           borderWidth: 1.5,
@@ -400,7 +400,7 @@
         scenarios.forEach(function (sc) {
           var data = simulate(sc);
           var final = data[35];
-          var met = final <= 21;
+          var met = final <= 28;
           var red = Math.round((1 - final / 42.9) * 100);
           var active = sc.id === activeId;
           var card = document.createElement('div');
