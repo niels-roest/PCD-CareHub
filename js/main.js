@@ -317,4 +317,17 @@
 
     mediaQuery.addEventListener('change', handleResize);
 
+    /* ============================================
+       FOOTER EMAIL (anti-scraping obfuscation)
+       ============================================ */
+    var emailEl = document.getElementById('footer-email');
+    if (emailEl) {
+        var u = emailEl.getAttribute('data-u');
+        var d = emailEl.getAttribute('data-d');
+        if (u && d) {
+            emailEl.href = 'mailto:' + u + '@' + d;
+            emailEl.textContent = u + '@' + d;
+        }
+    }
+
 })();

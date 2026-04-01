@@ -65,7 +65,8 @@ if (fs.existsSync(mainJsPath)) {
   console.log('Minified main.js');
 }
 
-const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html', 'carehub-simulatie.html'];
+// NOTE: carehub-simulatie.html is confidential (intern gebruik) — deliberately excluded from public build
+const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html'];
 for (const file of staticFiles) {
   const src = path.join(__dirname, file);
   if (fs.existsSync(src)) {
@@ -77,7 +78,7 @@ for (const file of staticFiles) {
 // 3. Configure Nunjucks
 // ============================================
 const env = nunjucks.configure(path.join(SRC, 'templates'), {
-  autoescape: false,
+  autoescape: true,
   noCache: true,
   throwOnUndefined: false,
 });
