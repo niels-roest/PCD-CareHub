@@ -65,7 +65,7 @@ if (fs.existsSync(mainJsPath)) {
   console.log('Minified main.js');
 }
 
-const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html'];
+const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html', 'carehub-simulatie.html'];
 for (const file of staticFiles) {
   const src = path.join(__dirname, file);
   if (fs.existsSync(src)) {
