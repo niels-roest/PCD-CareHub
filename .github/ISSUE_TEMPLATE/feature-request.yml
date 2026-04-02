@@ -1,0 +1,45 @@
+name: Feature Request
+description: Nieuwe feature of pagina toevoegen
+title: "[Feature] "
+labels: ["claude", "enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Wat moet er gebouwd worden?
+      placeholder: Beschrijf specifiek. Verwijs naar bestaande pagina's als voorbeeld.
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Betrokken bestanden (optioneel)
+      placeholder: |
+        - Nieuw: src/pages/nl/insight-nieuw-onderwerp.njk
+        - Wijzig: src/pages/nl/insights.njk (voeg card toe)
+        - Wijzig: src/i18n/slugs.json (voeg slug toe)
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Nieuwe pagina
+        - Content wijziging
+        - Styling / UI
+        - SEO / metadata
+        - Build / template
+    validations:
+      required: true
+  - type: dropdown
+    id: languages
+    attributes:
+      label: Talen
+      multiple: true
+      options:
+        - Nederlands (nl)
+        - Engels (en)
+        - Spaans (es)
+        - Portugees (pt-br)
+        - Alle talen
+    validations:
+      required: true

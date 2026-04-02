@@ -1,0 +1,17 @@
+name: Bug Fix
+description: Bug of probleem melden
+title: "[Bug] "
+labels: ["claude", "bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Wat is het probleem?
+      placeholder: Beschrijf het probleem en op welke pagina het optreedt.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Verwacht gedrag
+      placeholder: Wat zou er moeten gebeuren?

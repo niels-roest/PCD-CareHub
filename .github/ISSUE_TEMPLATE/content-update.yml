@@ -1,0 +1,28 @@
+name: Content Update
+description: Tekst of vertalingen bijwerken
+title: "[Content] "
+labels: ["claude", "content"]
+body:
+  - type: textarea
+    id: changes
+    attributes:
+      label: Welke content moet worden bijgewerkt?
+      placeholder: |
+        Pagina: leiderschap
+        Sectie: Team member #4 (Niels Roest)
+        Wijziging: Titel bijwerken naar "CAIO & Chairman"
+    validations:
+      required: true
+  - type: dropdown
+    id: languages
+    attributes:
+      label: Talen
+      multiple: true
+      options:
+        - Nederlands (nl)
+        - Engels (en)
+        - Spaans (es)
+        - Portugees (pt-br)
+        - Alle talen
+    validations:
+      required: true

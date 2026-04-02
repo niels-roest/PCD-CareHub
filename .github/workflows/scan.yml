@@ -1,0 +1,54 @@
+name: Weekly Codebase Scan
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Monday 07:00 UTC (09:00 NL summer time)
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Claude Code Scan
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: claude-sonnet-4-20250514
+          direct_prompt: |
+            You are the quality engine for the PCD Investment Partners website.
+            Scan this codebase and identify up to 5 improvements.
+
+            Analyze:
+            1. Broken internal links — check href attributes in src/pages/ against actual pages
+            2. Missing translations — compare nl/ pages with en/, es/, pt-br/ (missing files)
+            3. SEO issues — missing/short meta descriptions, missing structured data, schema errors
+            4. Images without alt text, without width/height, or oversized files
+            5. Build issues — run `node build.js` and check for warnings or errors
+            6. Code quality — unused CSS classes in custom.css, duplicate code patterns
+
+            Before creating issues, check existing open issues with `gh issue list --label claude-voorstel`
+            to avoid duplicates.
+
+            For each finding, create a GitHub issue:
+            - Clear, specific title
+            - Description with filename + line number where applicable
+            - Label: "claude-voorstel"
+            - Use `gh issue create --title "..." --body "..." --label "claude-voorstel"`
+
+            Maximum 5 issues per scan. Prioritize by impact: broken > missing > quality.
