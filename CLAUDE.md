@@ -174,7 +174,7 @@ Every page includes (via `partials/head.njk`):
 1. Frans van den Berg — CEO & Board Member
 2. Patrick Dinkela — Co-Founder, COO & Vice-Chairman
 3. Coby Dinkela — Co-Founder & CCO
-4. Niels Roest — Chief AI & Innovation Officer (CAIO)
+4. Niels Roest — CAIO & Chairman
 5. Frank van Antwerpen — CFO
 6. Kevin de Rooij — Legal Director
 
