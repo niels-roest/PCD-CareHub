@@ -55,6 +55,12 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           label_trigger: "claude"
+          prompt: |
+            After making any code changes, always run these verification steps before creating a PR:
+            1. Run `node build.js` — must complete without errors
+            2. Run `node verify-build.js` — must pass all checks
+            If either command fails, fix the issues first. Do not create a PR until both pass.
+            "The build probably works" is not verification — run it and check the output.
 
       - name: Circuit breaker — label failed issues
         if: failure() && github.event.issue.number
