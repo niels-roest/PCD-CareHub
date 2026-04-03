@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
+    "verify": "node verify-build.js",
+    "build:safe": "node build.js && node verify-build.js",
     "dev": "node build.js && npx serve dist"
   },
   "dependencies": {

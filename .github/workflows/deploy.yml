@@ -31,6 +31,9 @@ jobs:
 
       - run: node build.js
 
+      - name: Verify build output
+        run: node verify-build.js --ci
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
