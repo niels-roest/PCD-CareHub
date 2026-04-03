@@ -12,14 +12,20 @@ on:
 
 jobs:
   claude:
+    # Circuit breaker: skip issues labeled 'claude-failed' to prevent retry loops
     if: |
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'issues' && (
-        contains(github.event.issue.body, '@claude') ||
-        github.event.action == 'labeled'
-      )) ||
-      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude'))
+      (
+        (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'issues' && (
+          contains(github.event.issue.body, '@claude') ||
+          github.event.action == 'labeled'
+        )) ||
+        (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude'))
+      ) && (
+        github.event_name != 'issues' ||
+        !contains(toJSON(github.event.issue.labels.*.name), 'claude-failed')
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -44,7 +50,16 @@ jobs:
         run: npm ci
 
       - name: Run Claude Code
+        id: claude
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           label_trigger: "claude"
+
+      - name: Circuit breaker — label failed issues
+        if: failure() && github.event.issue.number
+        run: |
+          gh issue edit "${{ github.event.issue.number }}" --add-label "claude-failed"
+          gh issue comment "${{ github.event.issue.number }}" --body "Claude Code failed on this issue. Remove the \`claude-failed\` label to retry."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

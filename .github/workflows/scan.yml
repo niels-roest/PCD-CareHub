@@ -16,16 +16,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Gate — skip scan if too many open proposals
+        id: gate
+        run: |
+          count=$(gh issue list --label claude-voorstel --state open --json id --jq length)
+          echo "open_proposals=$count" >> "$GITHUB_OUTPUT"
+          if [ "$count" -ge 3 ]; then
+            echo "::notice::Skipping scan — $count open claude-voorstel issues (max 3). Process existing proposals first."
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup Node.js
+        if: steps.gate.outputs.open_proposals < 3
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
       - name: Install dependencies
+        if: steps.gate.outputs.open_proposals < 3
         run: npm ci
 
       - name: Run Claude Code Scan
+        if: steps.gate.outputs.open_proposals < 3
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
