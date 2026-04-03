@@ -46,23 +46,28 @@ jobs:
           model: claude-sonnet-4-20250514
           direct_prompt: |
             You are the quality engine for the PCD Investment Partners website.
-            Scan this codebase and identify up to 5 improvements.
+            Find exactly 3-5 real, verified issues in this codebase.
 
-            Analyze:
-            1. Broken internal links — check href attributes in src/pages/ against actual pages
-            2. Missing translations — compare nl/ pages with en/, es/, pt-br/ (missing files)
-            3. SEO issues — missing/short meta descriptions, missing structured data, schema errors
-            4. Images without alt text, without width/height, or oversized files
-            5. Build issues — run `node build.js` and check for warnings or errors
-            6. Code quality — unused CSS classes in custom.css, duplicate code patterns
+            VERIFICATION RULES — apply to every finding before reporting:
+            - "The code looks correct based on my reading" — reading is not verification. Run it.
+            - "This might be a problem" is not a valid finding. Only confirmed issues.
+            - "The build probably still works" — run `node build.js` and check the output.
+            - Every finding must include: file path + line number + the exact problem observed.
 
-            Before creating issues, check existing open issues with `gh issue list --label claude-voorstel`
-            to avoid duplicates.
+            ANALYZE (in priority order — stop at 5 confirmed findings):
+            1. Build issues — run `node build.js`, report any errors or warnings in the output
+            2. Broken internal links — check href values in src/pages/ against actual page files
+            3. Missing translations — for each nl/ page, check if en/, es/, pt-br/ versions exist
+            4. SEO gaps — meta descriptions < 50 chars, missing og_image, missing structured data blocks
+            5. Images — missing alt text, missing width/height attributes
 
-            For each finding, create a GitHub issue:
-            - Clear, specific title
-            - Description with filename + line number where applicable
+            BEFORE CREATING ISSUES:
+            - Run `gh issue list --label claude-voorstel --state open` and skip any duplicate findings.
+
+            FOR EACH CONFIRMED FINDING, create one GitHub issue:
+            - Title: max 60 chars, starts with the file or area affected
+            - Body: 1 sentence describing the problem + exact file:line + 1 sentence fix suggestion
             - Label: "claude-voorstel"
-            - Use `gh issue create --title "..." --body "..." --label "claude-voorstel"`
+            - Command: `gh issue create --title "..." --body "..." --label "claude-voorstel"`
 
-            Maximum 5 issues per scan. Prioritize by impact: broken > missing > quality.
+            Total response: max 500 words. Maximum 5 issues.
