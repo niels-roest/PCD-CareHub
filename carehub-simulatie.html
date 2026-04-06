@@ -29,6 +29,7 @@
     .scenario-btn.active { box-shadow: 0 2px 10px rgba(0,0,0,0.2); transform: translateY(-1px); }
     input[type=range] { accent-color: #046bd2; cursor: pointer; }
     .metric-card { transition: border-color 0.15s, box-shadow 0.15s; cursor: pointer; }
+    .model-btn { transition: all 0.15s ease; }
     #assumptionsArrow { display: inline-block; transition: transform 0.2s; }
   </style>
 </head>
@@ -66,6 +67,14 @@
         <input type="range" id="diversionSlider" min="15" max="40" value="25" step="1" class="w-44">
         <span id="diversionLabel" class="text-sm font-bold text-brand-blue w-10">25%</span>
         <span class="text-xs text-gray-400">Aandeel patiënten omgeleid naar licht digitaal zorgpad (15–40%)</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <label class="text-sm font-medium text-gray-700 whitespace-nowrap">Effectiviteitsmodel:</label>
+        <div class="flex rounded-lg border border-gray-200 overflow-hidden" id="modelToggle">
+          <button data-mode="conservative" class="model-btn px-3 py-1.5 text-xs font-medium bg-brand-blue text-white">Conservatief (35%)</button>
+          <button data-mode="optimistic" class="model-btn px-3 py-1.5 text-xs font-medium bg-white text-gray-600 hover:bg-gray-50">Optimistisch (55%)</button>
+        </div>
+        <span class="text-xs text-gray-400" id="modelHint">Gevalideerd basismodel — effectiviteitsfactor per % adoptie</span>
       </div>
     </div>
   </div>
@@ -127,7 +136,7 @@
           <div class="flex flex-col items-center gap-2">
             <div class="w-40 h-20 rounded-xl bg-amber-50 border-2 border-amber-400 flex flex-col items-center justify-center px-2 text-center">
               <div class="text-xs font-bold text-amber-700">SYNTILLIO</div>
-              <div class="text-xs text-amber-600 mt-1">AI-triage · Remote monitoring</div>
+              <div class="text-xs text-amber-600 mt-1">Digitale triage · Remote monitoring</div>
             </div>
             <div class="text-xs text-gray-400 text-center">−<span id="flowDiversionPct">25</span>% triage-diversion · +2% capaciteit</div>
           </div>
@@ -187,7 +196,7 @@
           </div>
           <ul class="text-sm text-gray-700 space-y-2">
             <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> +2% extra capaciteit (kortere trajecten via remote monitoring)</li>
-            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> −<span id="cardDiversionPct" class="font-semibold text-amber-700">25</span>% vraag via AI-triage (instelbaar)</li>
+            <li class="flex gap-2"><span class="text-amber-500 flex-shrink-0">+</span> −<span id="cardDiversionPct" class="font-semibold text-amber-700">25</span>% vraag via digitale triage (instelbaar)</li>
             <li class="flex gap-2"><span class="text-gray-400 flex-shrink-0">&rarr;</span> Start maand 3, volledig effect na 15 maanden</li>
           </ul>
         </div>
@@ -223,7 +232,7 @@
   <section class="bg-white py-12 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-2xl font-bold text-gray-900 mb-2">Aannames &amp; bronnen</h2>
-      <p class="text-gray-600 mb-6">Strategische richting, geen precieze voorspelling. Syntillio-diversion te bevestigen op 3 april 2026.</p>
+      <p class="text-gray-600 mb-6">Strategische richting, geen precieze voorspelling. Effectiviteitsfactor gevalideerd met Syntillio first-party data (april 2026).</p>
       <button id="toggleAssumptions" class="flex items-center gap-2 text-sm font-medium text-brand-blue mb-4 hover:underline">
         <span id="assumptionsArrow">&#9654;</span>
         Toon modelaannames
@@ -244,7 +253,8 @@
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Treeknorm aanmeldwachttijd</td><td class="p-3 font-medium">&le; 28 dagen (4 weken)</td><td class="p-3 text-gray-500">Treeknorm 2000, bevestigd in IZA-akkoord 2022 (NZa handhaving)</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Vraaggroei (vergrijzing)</td><td class="p-3 font-medium">+0.2%/mnd (~2.4%/jaar)</td><td class="p-3 text-gray-500">CBS Bevolkingsprognose 2025, toenemende GGZ-vraag door vergrijzing en psychische belasting</td></tr>
             <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Growtivity capaciteitseffect</td><td class="p-3 font-medium">+4%</td><td class="p-3 text-gray-500">Admin −2u/week/behandelaar, no-show −30%, betere matching (conservatief)</td></tr>
-            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Syntillio triage-diversion</td><td class="p-3 font-medium">15–40%</td><td class="p-3 text-gray-500">Conservatief 15% (RIVM), middelmatig 25% (ZN benchmark), optimistisch 40% — <strong>te valideren 3 april 2026</strong></td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Syntillio triage-diversion</td><td class="p-3 font-medium">15–40%</td><td class="p-3 text-gray-500">Conservatief 15% (RIVM), middelmatig 25% (ZN benchmark), optimistisch 40% — <strong class="text-green-600">gevalideerd 3 april 2026</strong></td></tr>
+            <tr class="border-b border-gray-50 hover:bg-gray-50"><td class="p-3 text-gray-700">Effectiviteitsfactor (DIV_SCALE)</td><td class="p-3 font-medium">0.35 (cons.) / 0.55 (opt.)</td><td class="p-3 text-gray-500">Conservatief: basismodel. Optimistisch: Syntillio first-party data — 80% meldingen non-acuut, 2–5 uitrukken/dag voorkomen (TanteLouise/Medido casus)</td></tr>
             <tr class="hover:bg-gray-50"><td class="p-3 text-gray-700">Siemens Healthineers</td><td class="p-3 font-medium">Toekomstscenario</td><td class="p-3 text-gray-500">Niet gemodelleerd; meest relevant voor MSZ/ziekenhuis, niet GGZ</td></tr>
           </tbody>
         </table>
@@ -271,7 +281,7 @@
       </div>
       <div class="text-xs text-right">
         <div class="text-amber-300 font-semibold uppercase tracking-wider">Vertrouwelijk — Intern gebruik</div>
-        <div class="text-gray-400 mt-1">Versie 1.0 &middot; April 2026 &middot; Strategische simulatie, geen financieel advies</div>
+        <div class="text-gray-400 mt-1">Versie 1.1 &middot; April 2026 &middot; Strategische simulatie, geen financieel advies</div>
       </div>
     </div>
   </footer>
@@ -281,7 +291,9 @@
       'use strict';
 
       var BASE = { monthlyDemand: 10500, monthlyCapacity: 9800, initialQueue: 14000, months: 36, demandGrowth: 0.002 };
-      var DIV_SCALE = 0.35;
+      var DIV_SCALES = { conservative: 0.35, optimistic: 0.55 };
+      var DIV_SCALE = DIV_SCALES.conservative;
+      var currentModel = 'conservative';
 
       var DEFS = [
         { id: 'baseline', label: 'Baseline',   sublabel: 'Geen interventie',   color: '#ef4444', capMult: 1.000, startMonth: 0, rampMonths: 1  },
@@ -450,6 +462,25 @@
         divPct = parseInt(this.value, 10);
         document.getElementById('diversionLabel').textContent = divPct + '%';
         updateAll();
+      });
+
+      document.querySelectorAll('.model-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          currentModel = this.getAttribute('data-mode');
+          DIV_SCALE = DIV_SCALES[currentModel];
+          document.querySelectorAll('.model-btn').forEach(function (b) {
+            if (b.getAttribute('data-mode') === currentModel) {
+              b.className = 'model-btn px-3 py-1.5 text-xs font-medium bg-brand-blue text-white';
+            } else {
+              b.className = 'model-btn px-3 py-1.5 text-xs font-medium bg-white text-gray-600 hover:bg-gray-50';
+            }
+          });
+          var hint = document.getElementById('modelHint');
+          hint.textContent = currentModel === 'conservative'
+            ? 'Gevalideerd basismodel \u2014 effectiviteitsfactor per % adoptie'
+            : 'Syntillio first-party data: 80% meldingen non-acuut (april 2026)';
+          updateAll();
+        });
       });
 
       document.getElementById('toggleAssumptions').addEventListener('click', function () {

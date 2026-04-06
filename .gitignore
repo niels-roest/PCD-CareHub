@@ -2,3 +2,8 @@ node_modules/
 dist/
 *.DS_Store
 .DS_Store
+screenshots/output/
+screenshots/node_modules/
+screenshots/.env
+screenshots/package*.json
+.claude/
