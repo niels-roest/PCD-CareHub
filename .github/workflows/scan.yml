@@ -43,8 +43,8 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          model: claude-sonnet-4-20250514
-          direct_prompt: |
+          claude_args: "--model claude-sonnet-4-20250514"
+          prompt: |
             You are the quality engine for the PCD Investment Partners website.
             Find exactly 3-5 real, verified issues in this codebase.
 
