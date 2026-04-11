@@ -545,6 +545,114 @@ fs.writeFileSync(path.join(DIST, `${indexNowKey}.txt`), indexNowKey);
 console.log(`  Created ${indexNowKey}.txt for IndexNow protocol`);
 
 // ============================================
+// 13. Generate llms-full.txt and markdown mirrors
+// ============================================
+console.log('\nGenerating llms-full.txt and markdown mirrors...');
+
+// Lightweight HTML-to-markdown converter
+function htmlToMarkdown(html) {
+  let md = html;
+  // Remove script, style, nav, svg, and structured_data blocks
+  md = md.replace(/<script[\s\S]*?<\/script>/gi, '');
+  md = md.replace(/<style[\s\S]*?<\/style>/gi, '');
+  md = md.replace(/<nav[\s\S]*?<\/nav>/gi, '');
+  md = md.replace(/<svg[\s\S]*?<\/svg>/gi, '');
+  // Convert headings
+  md = md.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, (_, c) => `# ${c.replace(/<[^>]+>/g, '').trim()}\n\n`);
+  md = md.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, c) => `## ${c.replace(/<[^>]+>/g, '').trim()}\n\n`);
+  md = md.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, (_, c) => `### ${c.replace(/<[^>]+>/g, '').trim()}\n\n`);
+  // Convert links (preserve href)
+  md = md.replace(/<a\s[^>]*href=["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, (_, href, text) => {
+    const cleanText = text.replace(/<[^>]+>/g, '').trim();
+    if (!cleanText) return '';
+    // Make relative URLs absolute
+    const url = href.startsWith('/') ? `${SITE_URL}${href}` : href;
+    return `[${cleanText}](${url})`;
+  });
+  // Convert strong/em
+  md = md.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, (_, __, c) => `**${c.replace(/<[^>]+>/g, '').trim()}**`);
+  md = md.replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, (_, __, c) => `*${c.replace(/<[^>]+>/g, '').trim()}*`);
+  // Convert list items
+  md = md.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, (_, c) => `- ${c.replace(/<[^>]+>/g, '').trim()}\n`);
+  // Convert paragraphs
+  md = md.replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, (_, c) => `${c.replace(/<[^>]+>/g, '').trim()}\n\n`);
+  // Convert time elements
+  md = md.replace(/<time[^>]*>([\s\S]*?)<\/time>/gi, (_, c) => c.trim());
+  // Strip all remaining HTML tags
+  md = md.replace(/<[^>]+>/g, '');
+  // Decode common HTML entities
+  md = md.replace(/&mdash;/g, '—').replace(/&ndash;/g, '–').replace(/&amp;/g, '&');
+  md = md.replace(/&ldquo;/g, '\u201C').replace(/&rdquo;/g, '\u201D').replace(/&lsquo;/g, '\u2018').replace(/&rsquo;/g, '\u2019');
+  md = md.replace(/&middot;/g, '·').replace(/&nbsp;/g, ' ').replace(/&eacute;/g, 'é');
+  md = md.replace(/&euml;/g, 'ë').replace(/&iuml;/g, 'ï').replace(/&uacute;/g, 'ú');
+  md = md.replace(/&oacute;/g, 'ó').replace(/&aacute;/g, 'á').replace(/&iacute;/g, 'í');
+  md = md.replace(/&ntilde;/g, 'ñ').replace(/&ccedil;/g, 'ç').replace(/&atilde;/g, 'ã');
+  md = md.replace(/&otilde;/g, 'õ').replace(/&ecirc;/g, 'ê').replace(/&agrave;/g, 'à');
+  md = md.replace(/&Eacute;/g, 'É').replace(/&Atilde;/g, 'Ã').replace(/&Ccedil;/g, 'Ç');
+  md = md.replace(/&Oacute;/g, 'Ó').replace(/&#\d+;/g, '');
+  // Clean up whitespace
+  md = md.replace(/[ \t]+/g, ' ');
+  md = md.replace(/\n{3,}/g, '\n\n');
+  md = md.trim();
+  return md;
+}
+
+// Build llms-full.txt from EN pages (international audience)
+let llmsFullSections = [];
+llmsFullSections.push(`# PCD Investment Partners — Full Content`);
+llmsFullSections.push(`> PCD Investment Partners builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.\n`);
+
+let mdMirrorCount = 0;
+
+// Generate markdown mirrors for all HTML pages (all languages)
+const distHtmlFiles = globSync('**/*.html', { cwd: DIST });
+for (const htmlFile of distHtmlFiles) {
+  if (htmlFile.includes('404') || htmlFile === 'google9bcc3954f46db140.html' || htmlFile === 'carehub-simulatie.html') continue;
+
+  const htmlPath = path.join(DIST, htmlFile);
+  const html = fs.readFileSync(htmlPath, 'utf8');
+
+  // Extract title from <title> tag
+  const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  const title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, '').trim() : '';
+
+  // Extract description from meta
+  const descMatch = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
+  const description = descMatch ? descMatch[1] : '';
+
+  // Extract main content (between header and footer)
+  const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i)
+    || html.match(/<\/header>([\s\S]*?)<footer/i);
+  const mainHtml = mainMatch ? mainMatch[1] : html;
+
+  const markdown = `---\ntitle: "${title}"\ndescription: "${description}"\nurl: ${SITE_URL}/${htmlFile.replace(/\.html$/, '').replace(/\/index$/, '/')}\n---\n\n${htmlToMarkdown(mainHtml)}`;
+
+  // Write .md mirror alongside .html
+  const mdPath = htmlPath.replace(/\.html$/, '.md');
+  fs.writeFileSync(mdPath, markdown);
+  mdMirrorCount++;
+
+  // Collect EN pages for llms-full.txt
+  const isEnPage = htmlFile.startsWith('en/') || htmlFile === 'index.html';
+  if (isEnPage && htmlFile !== 'en/index.html') {
+    const slug = htmlFile.replace(/\.html$/, '').replace(/^en\//, '');
+    const pageUrl = htmlFile === 'index.html'
+      ? `${SITE_URL}/`
+      : `${SITE_URL}/en/${slug}`;
+    const mdContent = htmlToMarkdown(mainHtml);
+    if (mdContent.length > 100) { // Skip near-empty pages
+      llmsFullSections.push(`\n---\n\n## ${title}\n\nURL: ${pageUrl}\n\n${mdContent}`);
+    }
+  }
+}
+
+// Write llms-full.txt
+const llmsFullContent = llmsFullSections.join('\n');
+fs.writeFileSync(path.join(DIST, 'llms-full.txt'), llmsFullContent);
+console.log(`  Generated llms-full.txt (${Math.round(llmsFullContent.length / 1024)}KB)`);
+console.log(`  Generated ${mdMirrorCount} markdown mirrors`);
+
+// ============================================
 // Done
 // ============================================
 console.log(`\nBuild complete! ${totalPages} pages generated in dist/`);

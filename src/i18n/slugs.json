@@ -123,5 +123,15 @@
     "en": "insight-nen-7510-gdpr-compliance-healthtech",
     "es": "insight-nen-7510-rgpd-compliance-tecnologia-sanitaria",
     "pt-br": "insight-nen-7510-lgpd-compliance-tecnologia-saude"
+  },
+  "insight-congres-samen-voor-gezondheid-2026": {
+    "en": "insight-together-for-health-conference-2026",
+    "es": "insight-congreso-juntos-por-la-salud-2026",
+    "pt-br": "insight-congresso-juntos-pela-saude-2026"
+  },
+  "insight-vertrouwen-ai-zorg": {
+    "en": "insight-trust-ai-healthcare",
+    "es": "insight-confianza-ia-salud",
+    "pt-br": "insight-confianca-ia-saude"
   }
 }
