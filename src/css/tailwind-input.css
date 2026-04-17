@@ -1,3 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Subtle global aurora glow behind every page — adds warmth without per-page work */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(96, 165, 250, 0.06), transparent 45%),
+    radial-gradient(circle at 88% 85%, rgba(167, 139, 250, 0.05), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.025), transparent 55%);
+}
+body > * { position: relative; z-index: 1; }
+
+@layer components {
+  /* ============================================
+     PCD BRAND GRADIENTS — canonical (shared with pcdOS + investor-portal)
+     Aurora:     #60a5fa → #a78bfa → #f472b6   (cool → warm, for accent text + premium surfaces)
+     DeepBrand:  #046bd2 → #3b82f6 → #6366f1   (brand-blue → indigo, for primary CTAs)
+     ============================================ */
+  .bg-aurora {
+    background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  }
+  .bg-aurora-soft {
+    background: linear-gradient(135deg, rgba(96,165,250,0.25) 0%, rgba(167,139,250,0.2) 50%, rgba(244,114,182,0.2) 100%);
+  }
+  .ring-aurora {
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.25), 0 20px 60px -20px rgba(167, 139, 250, 0.35);
+  }
+  .badge-gradient-brand {
+    background: linear-gradient(135deg, #046bd2 0%, #6366f1 100%);
+    box-shadow: 0 12px 30px -10px rgba(4, 107, 210, 0.5);
+  }
+  .badge-gradient-warm {
+    background: linear-gradient(135deg, #7c3aed 0%, #f472b6 100%);
+    box-shadow: 0 12px 30px -10px rgba(124, 58, 237, 0.5);
+  }
+  .icon-tile {
+    @apply border border-white/10 bg-white/[0.04] text-brand-blue-light;
+  }
+
+  .glass {
+    @apply rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .glass-subtle {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03];
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-text-aurora {
+    background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-gradient {
+    background: linear-gradient(90deg, #046bd2 0%, #3b82f6 50%, #6366f1 100%);
+    box-shadow: 0 18px 40px -12px rgba(4, 107, 210, 0.45);
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+  .btn-aurora {
+    background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    box-shadow: 0 18px 40px -12px rgba(167, 139, 250, 0.5);
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+  .btn-aurora:hover {
+    filter: brightness(1.1);
+  }
+  .btn-gradient:hover {
+    filter: brightness(1.1);
+  }
+  .btn-outline-soft {
+    @apply border border-white/15 bg-white/[0.03] text-white hover:border-white/30 hover:bg-white/[0.06] transition-colors;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70 backdrop-blur;
+  }
+  .eyebrow-dot::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: #34d399;
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
+  }
+}
+
+@layer utilities {
+  .bg-grid-subtle {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.035;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(140px);
+    pointer-events: none;
+  }
+  .orb-blue {
+    background-color: #046bd2;
+    opacity: 0.3;
+  }
+  .orb-violet {
+    background-color: #7c3aed;
+    opacity: 0.25;
+  }
+  .orb-cyan {
+    background-color: #0ea5e9;
+    opacity: 0.2;
+  }
+}

@@ -9,7 +9,7 @@ noindex: true
 <!-- ============================================ -->
         <!-- HERO SECTION                                 -->
         <!-- ============================================ -->
-        <section class="relative min-h-[70vh] flex items-center bg-navy-900 overflow-hidden" aria-label="Hero">
+        <section class="relative min-h-[70vh] flex items-center overflow-hidden" aria-label="Hero">
             <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700"></div>
             <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
 
@@ -27,20 +27,18 @@ noindex: true
 
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     <div class="fade-in-up">
-                        <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-6">Investeringsfonds</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                            PCD CareHub Fonds
-                        </h1>
+                        <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue-light bg-brand-blue/10 rounded-full uppercase mb-6">Investeringsfonds</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">PCD CareHub <span class="gradient-text">Fonds</span></h1>
                         <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
                             Investeer in de digitale toekomst van de Nederlandse zorgsector. Het PCD CareHub Fonds bundelt bewezen zorgtechnologie in &eacute;&eacute;n samenhangend ecosysteem via een buy-and-build strategie.
                         </p>
-                        <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-blue hover:bg-brand-blue-dark rounded-lg transition-all duration-200 shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/30">
+                        <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-blue hover:bg-brand-blue-dark rounded-lg transition-all duration-200 shadow-brand-blue/25 hover: hover:shadow-brand-blue/30">
                             Neem contact op voor meer informatie
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                     <div class="fade-in-up hidden lg:block">
-                        <img src="{{ rootPath }}assets/images/invest-partnership-handshake.webp" alt="Investeerders werken samen aan het CareHub ecosysteem" class="rounded-2xl shadow-2xl w-full h-auto object-cover" loading="lazy" width="640" height="480">
+                        <img src="{{ rootPath }}assets/images/invest-partnership-handshake.webp" alt="Investeerders werken samen aan het CareHub ecosysteem" class="rounded-2xl w-full h-auto object-cover" loading="lazy" width="640" height="480">
                     </div>
                 </div>
             </div>
@@ -49,30 +47,30 @@ noindex: true
         <!-- ============================================ -->
         <!-- KEY FACTS                                    -->
         <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-white" aria-labelledby="kerngegevens">
+        <section class="py-20 lg:py-28" aria-labelledby="kerngegevens">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Overzicht</span>
-                    <h2 id="kerngegevens" class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Kerngegevens van het fonds</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Een samenvatting van de belangrijkste kenmerken van het PCD CareHub Fonds.</p>
+                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue-light bg-brand-blue/10 rounded-full uppercase mb-4">Overzicht</span>
+                    <h2 id="kerngegevens" class="text-3xl sm:text-4xl font-bold text-white mb-6">Kerngegevens van het fonds</h2>
+                    <p class="text-lg text-white/65 leading-relaxed">Een samenvatting van de belangrijkste kenmerken van het PCD CareHub Fonds.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in-up">
-                    <div class="bg-brand-light rounded-2xl p-8 text-center">
-                        <div class="text-4xl font-bold text-brand-blue mb-2">Zorgtech</div>
-                        <p class="text-sm text-gray-600">Sector</p>
+                    <div class="rounded-2xl p-8 text-center">
+                        <div class="text-4xl font-bold text-brand-blue-light mb-2">Zorgtech</div>
+                        <p class="text-sm text-white/65">Sector</p>
                     </div>
-                    <div class="bg-brand-light rounded-2xl p-8 text-center">
-                        <div class="text-4xl font-bold text-brand-blue mb-2">NL/EU</div>
-                        <p class="text-sm text-gray-600">Geografische focus</p>
+                    <div class="rounded-2xl p-8 text-center">
+                        <div class="text-4xl font-bold text-brand-blue-light mb-2">NL/EU</div>
+                        <p class="text-sm text-white/65">Geografische focus</p>
                     </div>
-                    <div class="bg-brand-light rounded-2xl p-8 text-center">
-                        <div class="text-4xl font-bold text-brand-blue mb-2">Buy &amp; Build</div>
-                        <p class="text-sm text-gray-600">Strategie</p>
+                    <div class="rounded-2xl p-8 text-center">
+                        <div class="text-4xl font-bold text-brand-blue-light mb-2">Buy &amp; Build</div>
+                        <p class="text-sm text-white/65">Strategie</p>
                     </div>
-                    <div class="bg-brand-light rounded-2xl p-8 text-center">
-                        <div class="text-4xl font-bold text-brand-blue mb-2">ESG</div>
-                        <p class="text-sm text-gray-600">Duurzaamheidsfocus</p>
+                    <div class="rounded-2xl p-8 text-center">
+                        <div class="text-4xl font-bold text-brand-blue-light mb-2">ESG</div>
+                        <p class="text-sm text-white/65">Duurzaamheidsfocus</p>
                     </div>
                 </div>
             </div>
@@ -81,20 +79,20 @@ noindex: true
         <!-- ============================================ -->
         <!-- INVESTMENT STRATEGY SUMMARY                   -->
         <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-brand-light" aria-labelledby="strategie-samenvatting">
+        <section class="py-20 lg:py-28" aria-labelledby="strategie-samenvatting">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     <div class="fade-in-up">
-                        <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Strategie</span>
-                        <h2 id="strategie-samenvatting" class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Ecosysteem als investeringsthese</h2>
-                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue-light bg-brand-blue/10 rounded-full uppercase mb-4">Strategie</span>
+                        <h2 id="strategie-samenvatting" class="text-3xl sm:text-4xl font-bold text-white mb-6">Ecosysteem als investeringsthese</h2>
+                        <div class="space-y-4 text-white/65 leading-relaxed">
                             <p>De Nederlandse zorgsector digitaliseert in hoog tempo, maar het softwarelandschap is sterk gefragmenteerd. Deze fragmentatie cre&euml;ert een unieke consolidatiekans.</p>
-                            <p>Het PCD CareHub Fonds investeert in bewezen zorgtechnologiebedrijven en brengt deze samen in het <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-brand-blue hover:text-brand-blue-dark font-medium underline underline-offset-4">CareHub-ecosysteem</a>. Door interoperabiliteit via open standaarden (FHIR, HL7) ontstaan netwerk- en schaaleffecten die individuele bedrijven niet kunnen realiseren.</p>
+                            <p>Het PCD CareHub Fonds investeert in bewezen zorgtechnologiebedrijven en brengt deze samen in het <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-brand-blue-light hover:text-white font-medium underline underline-offset-4">CareHub-ecosysteem</a>. Door interoperabiliteit via open standaarden (FHIR, HL7) ontstaan netwerk- en schaaleffecten die individuele bedrijven niet kunnen realiseren.</p>
                             <p>Het resultaat: een platformstrategie die langetermijnwaarde cre&euml;ert voor investeerders &eacute;n de kwaliteit van zorg verbetert.</p>
                         </div>
                     </div>
                     <div class="fade-in-up hidden lg:block">
-                        <img src="{{ rootPath }}assets/images/invest-boardroom-meeting.webp" alt="Strategisch overleg over het CareHub ecosysteem" class="rounded-2xl shadow-xl w-full h-auto object-cover" loading="lazy" width="640" height="480">
+                        <img src="{{ rootPath }}assets/images/invest-boardroom-meeting.webp" alt="Strategisch overleg over het CareHub ecosysteem" class="rounded-2xl w-full h-auto object-cover" loading="lazy" width="640" height="480">
                     </div>
                 </div>
             </div>
@@ -103,50 +101,50 @@ noindex: true
         <!-- ============================================ -->
         <!-- MARKET OPPORTUNITY                            -->
         <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-white" aria-labelledby="marktkans">
+        <section class="py-20 lg:py-28" aria-labelledby="marktkans">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Marktkans</span>
-                    <h2 id="marktkans" class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Waarom nu investeren in digitale zorg?</h2>
+                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue-light bg-brand-blue/10 rounded-full uppercase mb-4">Marktkans</span>
+                    <h2 id="marktkans" class="text-3xl sm:text-4xl font-bold text-white mb-6">Waarom nu investeren in digitale zorg?</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up">
-                    <div class="bg-brand-light rounded-2xl p-8">
+                    <div class="rounded-2xl p-8">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Groeiende markt</h3>
-                        <p class="text-gray-600 leading-relaxed">De Nederlandse markt voor digitale zorgtechnologie groeit jaarlijks met dubbele cijfers, gedreven door vergrijzing en de Wet digitale overheid (Wdo).</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Groeiende markt</h3>
+                        <p class="text-white/65 leading-relaxed">De Nederlandse markt voor digitale zorgtechnologie groeit jaarlijks met dubbele cijfers, gedreven door vergrijzing en de Wet digitale overheid (Wdo).</p>
                     </div>
 
-                    <div class="bg-brand-light rounded-2xl p-8">
+                    <div class="rounded-2xl p-8">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Personeelstekort</h3>
-                        <p class="text-gray-600 leading-relaxed">De zorgsector kampt met structurele personeelstekorten. Digitalisering is geen luxe meer, maar noodzaak om de kwaliteit van zorg te waarborgen.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Personeelstekort</h3>
+                        <p class="text-white/65 leading-relaxed">De zorgsector kampt met structurele personeelstekorten. Digitalisering is geen luxe meer, maar noodzaak om de kwaliteit van zorg te waarborgen.</p>
                     </div>
 
-                    <div class="bg-brand-light rounded-2xl p-8">
+                    <div class="rounded-2xl p-8">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Fragmentatie = kans</h3>
-                        <p class="text-gray-600 leading-relaxed">Het zorgsoftware-landschap is sterk gefragmenteerd met honderden kleine aanbieders. De consolidatiekans is groot en het timing-window is nu.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Fragmentatie = kans</h3>
+                        <p class="text-white/65 leading-relaxed">Het zorgsoftware-landschap is sterk gefragmenteerd met honderden kleine aanbieders. De consolidatiekans is groot en het timing-window is nu.</p>
                     </div>
                 </div>
 
                 <!-- Stats -->
                 <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 fade-in-up">
-                    <div class="bg-navy-900 rounded-2xl p-8 text-center">
+                    <div class="rounded-2xl p-8 text-center">
                         <div class="text-4xl font-bold text-white mb-2">&euro;6,2 mld</div>
                         <p class="text-sm text-white/60">Marktomvang digitale zorg NL</p>
                     </div>
-                    <div class="bg-navy-900 rounded-2xl p-8 text-center">
+                    <div class="rounded-2xl p-8 text-center">
                         <div class="text-4xl font-bold text-white mb-2">12%</div>
                         <p class="text-sm text-white/60">Jaarlijkse groei</p>
                     </div>
-                    <div class="bg-navy-900 rounded-2xl p-8 text-center">
+                    <div class="rounded-2xl p-8 text-center">
                         <div class="text-4xl font-bold text-white mb-2">50+</div>
                         <p class="text-sm text-white/60">Acquisitiedoelen ge&iuml;dentificeerd</p>
                     </div>
@@ -157,45 +155,45 @@ noindex: true
         <!-- ============================================ -->
         <!-- PROCESS / NEXT STEPS                          -->
         <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-brand-light" aria-labelledby="proces">
+        <section class="py-20 lg:py-28" aria-labelledby="proces">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Hoe werkt het</span>
-                    <h2 id="proces" class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Van interesse tot investeerder</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Een transparant proces in vier stappen.</p>
+                    <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue-light bg-brand-blue/10 rounded-full uppercase mb-4">Hoe werkt het</span>
+                    <h2 id="proces" class="text-3xl sm:text-4xl font-bold text-white mb-6">Van interesse tot investeerder</h2>
+                    <p class="text-lg text-white/65 leading-relaxed">Een transparant proces in vier stappen.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <div class="/[0.04] border border-white/10 rounded-2xl p-8 hover: transition-shadow duration-300 fade-in-up">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-xl font-bold text-brand-blue">1</span>
+                            <span class="text-xl font-bold text-brand-blue-light">1</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Kennismaken</h3>
-                        <p class="text-gray-600 leading-relaxed">Neem contact met ons op voor een vrijblijvend gesprek over het fonds en uw investeringswensen.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Kennismaken</h3>
+                        <p class="text-white/65 leading-relaxed">Neem contact met ons op voor een vrijblijvend gesprek over het fonds en uw investeringswensen.</p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <div class="/[0.04] border border-white/10 rounded-2xl p-8 hover: transition-shadow duration-300 fade-in-up">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-xl font-bold text-brand-blue">2</span>
+                            <span class="text-xl font-bold text-brand-blue-light">2</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Prospectus ontvangen</h3>
-                        <p class="text-gray-600 leading-relaxed">Na registratie op het investeerdersportaal kunt u direct de volledige prospectus bekijken en downloaden.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Prospectus ontvangen</h3>
+                        <p class="text-white/65 leading-relaxed">Na registratie op het investeerdersportaal kunt u direct de volledige prospectus bekijken en downloaden.</p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <div class="/[0.04] border border-white/10 rounded-2xl p-8 hover: transition-shadow duration-300 fade-in-up">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-xl font-bold text-brand-blue">3</span>
+                            <span class="text-xl font-bold text-brand-blue-light">3</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">KYC-verificatie</h3>
-                        <p class="text-gray-600 leading-relaxed">Wanneer u wilt investeren, doorloopt u de wettelijk verplichte KYC/AML-verificatie via ons portaal.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">KYC-verificatie</h3>
+                        <p class="text-white/65 leading-relaxed">Wanneer u wilt investeren, doorloopt u de wettelijk verplichte KYC/AML-verificatie via ons portaal.</p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 fade-in-up">
+                    <div class="/[0.04] border border-white/10 rounded-2xl p-8 hover: transition-shadow duration-300 fade-in-up">
                         <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-xl font-bold text-brand-blue">4</span>
+                            <span class="text-xl font-bold text-brand-blue-light">4</span>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Investeren</h3>
-                        <p class="text-gray-600 leading-relaxed">Na goedkeuring ondertekent u het prospectus en wordt u investeerder in het PCD CareHub Fonds.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Investeren</h3>
+                        <p class="text-white/65 leading-relaxed">Na goedkeuring ondertekent u het prospectus en wordt u investeerder in het PCD CareHub Fonds.</p>
                     </div>
                 </div>
             </div>
@@ -206,12 +204,12 @@ noindex: true
         <!-- ============================================ -->
         <section class="py-20 lg:py-28 bg-gradient-to-r from-brand-blue to-brand-blue-dark" aria-labelledby="cta-fonds">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
-                <h2 id="cta-fonds" class="text-3xl sm:text-4xl font-bold text-white mb-6">Interesse in het PCD CareHub Fonds?</h2>
+                <h2 id="cta-fonds" class="text-3xl sm:text-4xl font-bold text-white mb-6">Interesse in het PCD CareHub <span class="gradient-text">Fonds</span>?</h2>
                 <p class="text-lg text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
                     Neem contact met ons op voor een vertrouwelijk gesprek over het fonds en de investeringsmogelijkheden. Wij lichten graag persoonlijk toe hoe wij langetermijnwaarde cre&euml;ren in digitale zorgtechnologie.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-brand-blue bg-white hover:bg-gray-100 rounded-lg transition-all duration-200 shadow-lg">
+                    <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-brand-blue-light /[0.04] border border-white/10 hover:bg-white/[0.05] rounded-lg transition-all duration-200">
                         Neem contact op
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>

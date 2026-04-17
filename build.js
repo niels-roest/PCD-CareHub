@@ -418,7 +418,7 @@ const llmsTxt = `# ${BRAND_NAME}
 
 ## Contact
 - Website: ${SITE_URL}
-- LinkedIn: https://www.linkedin.com/company/pcd-investment-partners/
+- LinkedIn: https://www.linkedin.com/company/pcdcarehub
 `;
 fs.writeFileSync(path.join(DIST, 'llms.txt'), llmsTxt);
 

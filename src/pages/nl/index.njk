@@ -6,468 +6,465 @@ og_locale: "nl_NL"
 slug: ""
 ---
 <!-- ============================================ -->
-        <!-- HERO SECTION                                 -->
-        <!-- ============================================ -->
-        <section class="relative min-h-screen flex items-center bg-navy-900 overflow-hidden" aria-label="Hero">
-            <!-- Background gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700"></div>
-            <!-- Subtle grid pattern -->
-            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<!-- HERO SECTION                                 -->
+<!-- ============================================ -->
+<section class="relative min-h-screen flex items-center overflow-hidden" aria-label="Hero">
+    <div class="orb orb-blue -top-40 -left-40 h-[620px] w-[620px] animate-orb-drift"></div>
+    <div class="orb orb-violet -top-20 right-[-10%] h-[560px] w-[560px]"></div>
+    <div class="absolute inset-0 bg-grid-subtle pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.04),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.04),transparent_45%)] pointer-events-none"></div>
 
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-32">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <div class="fade-in-up">
-                        <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-6">Digitale zorg ecosysteem Europa</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                            Technologie die de zorg menselijker maakt
-                        </h1>
-                        <p class="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-xl">
-                            Wij geloven dat elke zorgverlener en pati&euml;nt recht heeft op een systeem dat hen verbindt en ondersteunt. Daarom bouwt PCD CareHub het CareHub&#8209;ecosysteem: een digitaal platform dat bewezen zorgsoftware samenbrengt, werkdruk verlicht en ruimte maakt voor wat echt telt. De zorg zelf.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-blue hover:bg-brand-blue-dark rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/25">
-                                Ontdek de CareHub
-                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                            <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 hover:border-white/40 rounded-lg transition-all duration-200">
-                                Neem contact op
-                            </a>
-                        </div>
-                    </div>
-                    <div class="fade-in-up hidden lg:block" style="animation-delay: 0.2s;">
-                        <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometrische illustratie van geïntegreerd healthcare ecosysteem met centraal ziekenhuis, klinieken en verbonden patiënten en zorgverleners in Nederland" class="w-full h-auto rounded-2xl shadow-2xl" width="500" height="500" loading="eager" fetchpriority="high">
-                    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-32 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="fade-in-up">
+                <span class="eyebrow eyebrow-dot mb-6">Digitale zorg ecosysteem Europa</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-6 mt-6">
+                    Technologie die de zorg<br><span class="gradient-text-aurora">menselijker maakt.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-white/65 leading-relaxed mb-10 max-w-xl">
+                    Wij geloven dat elke zorgverlener en pati&euml;nt recht heeft op een systeem dat hen verbindt en ondersteunt. Daarom bouwt PCD CareHub het CareHub&#8209;ecosysteem: een digitaal platform dat bewezen zorgsoftware samenbrengt, werkdruk verlicht en ruimte maakt voor wat echt telt. De zorg zelf.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white btn-gradient rounded-xl">
+                        Ontdek de CareHub
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="{{ langPrefix }}/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl btn-outline-soft">
+                        Neem contact op
+                    </a>
                 </div>
             </div>
-
-            <!-- Scroll indicator -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-                <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            <div class="fade-in-up hidden lg:block" style="animation-delay: 0.2s;">
+                <img src="{{ rootPath }}assets/images/hero-healthcare-ecosystem.webp" alt="Isometrische illustratie van geïntegreerd healthcare ecosysteem met centraal ziekenhuis, klinieken en verbonden patiënten en zorgverleners in Nederland" class="relative w-full h-auto rounded-3xl border border-white/10" width="500" height="500" loading="eager" fetchpriority="high">
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- ============================================ -->
-        <!-- STATS / SOCIAL PROOF                         -->
-        <!-- ============================================ -->
-        <section class="relative -mt-16 z-10 pb-12" aria-label="Kerncijfers">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <dl class="stats-grid bg-white rounded-2xl shadow-xl p-8 sm:p-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <dt class="sr-only">Marktgroei zorgtechnologie</dt>
-                        <dd>
-                            <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="310">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
-                            <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Marktgroei zorgtechnologie</p>
-                            <p class="mt-1 text-[11px] text-gray-500">Bron: Precedence Research, 2024</p>
-                        </dd>
-                    </div>
-                    <div class="text-center">
-                        <dt class="sr-only">Beoogde ecosysteem-bedrijven</dt>
-                        <dd>
-                            <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="25">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">+</span>
-                            <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Beoogde ecosysteem-bedrijven</p>
-                        </dd>
-                    </div>
-                    <div class="text-center">
-                        <dt class="sr-only">Minder administratieve lasten</dt>
-                        <dd>
-                            <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-navy-900" data-target="60">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold text-brand-blue">%</span>
-                            <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Minder administratieve lasten</p>
-                            <p class="mt-1 text-[11px] text-gray-500">Bron: CareHub case studies</p>
-                        </dd>
-                    </div>
-                    <div class="text-center">
-                        <dt class="sr-only">Digitale bereikbaarheid</dt>
-                        <dd>
-                            <span class="stat-value text-3xl sm:text-4xl font-bold text-navy-900">24/7</span>
-                            <p class="mt-2 text-sm text-gray-600" aria-hidden="true">Digitale bereikbaarheid</p>
-                        </dd>
-                    </div>
-                </dl>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STATS / SOCIAL PROOF                         -->
+<!-- ============================================ -->
+<section class="relative -mt-20 z-10 pb-16" aria-label="Kerncijfers">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <dl class="stats-grid glass p-8 sm:p-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <dt class="sr-only">Marktgroei zorgtechnologie</dt>
+                <dd>
+                    <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-white" data-target="310">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold gradient-text">%</span>
+                    <p class="mt-2 text-sm text-white/70" aria-hidden="true">Marktgroei zorgtechnologie</p>
+                    <p class="mt-1 text-[11px] text-white/40">Bron: Precedence Research, 2024</p>
+                </dd>
             </div>
-        </section>
+            <div class="text-center">
+                <dt class="sr-only">Beoogde ecosysteem-bedrijven</dt>
+                <dd>
+                    <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-white" data-target="25">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold gradient-text">+</span>
+                    <p class="mt-2 text-sm text-white/70" aria-hidden="true">Beoogde ecosysteem-bedrijven</p>
+                </dd>
+            </div>
+            <div class="text-center">
+                <dt class="sr-only">Minder administratieve lasten</dt>
+                <dd>
+                    <span class="stat-counter stat-value text-3xl sm:text-4xl font-bold text-white" data-target="60">0</span><span class="stat-unit text-3xl sm:text-4xl font-bold gradient-text">%</span>
+                    <p class="mt-2 text-sm text-white/70" aria-hidden="true">Minder administratieve lasten</p>
+                    <p class="mt-1 text-[11px] text-white/40">Bron: CareHub case studies</p>
+                </dd>
+            </div>
+            <div class="text-center">
+                <dt class="sr-only">Digitale bereikbaarheid</dt>
+                <dd>
+                    <span class="stat-value text-3xl sm:text-4xl font-bold gradient-text">24/7</span>
+                    <p class="mt-2 text-sm text-white/70" aria-hidden="true">Digitale bereikbaarheid</p>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</section>
 
-        <!-- ============================================ -->
-        <!-- WHAT IS CAREHUB                              -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-white" aria-label="Wat is CareHub">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="fade-in-up">
-                        <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Het CareHub-ecosysteem</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Wat is het CareHub-ecosysteem?</h2>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                            CareHub is een digitaal integratieplatform dat bestaande zorgsoftware samenbrengt via open standaarden als FHIR en HL7. Wanneer alle zorgsystemen samenwerken, verandert alles: minder registratielast, snellere zorg, en meer tijd voor het menselijke gesprek. De CareHub maakt dat mogelijk als een uniek digitaal zorgplatform dat bestaande, bewezen zorgsoftware samenbrengt in &eacute;&eacute;n samenhangend ecosysteem. Waar traditionele leveranciers kiezen voor gesloten suites, kiest de CareHub voor <strong>interoperabiliteit</strong> en <strong>open standaarden</strong> zoals FHIR en HL7.
-                        </p>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                            Het resultaat: zorgorganisaties krijgen één compleet cliëntbeeld via een integratielaag die ECD, EPD, planning, CRM en data-platforms naadloos verbindt. Minder registratielast, meer tijd voor de cliënt, en een toekomstbestendige digitale zorgketen.
-                        </p>
-                        <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center text-brand-blue font-semibold hover:text-brand-blue-dark transition-colors">
-                            Meer over de CareHub
-                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                    <div class="fade-in-up" style="animation-delay: 0.15s;">
-                        <img src="{{ rootPath }}assets/images/carehub-ecosystem-diagram.webp" alt="CareHub ecosysteem diagram met verbonden ECD, planning, CRM en data-platforms voor digitale zorgtechnologie integratie" class="w-full h-auto rounded-2xl shadow-lg" width="600" height="450" loading="lazy">
-                    </div>
+<!-- ============================================ -->
+<!-- WHAT IS CAREHUB                              -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28" aria-label="Wat is CareHub">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in-up">
+                <span class="eyebrow mb-4">Het CareHub-ecosysteem</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6 mt-5">Wat is het CareHub-ecosysteem?</h2>
+                <p class="text-lg text-white/65 leading-relaxed mb-6">
+                    CareHub is een digitaal integratieplatform dat bestaande zorgsoftware samenbrengt via open standaarden als FHIR en HL7. Wanneer alle zorgsystemen samenwerken, verandert alles: minder registratielast, snellere zorg, en meer tijd voor het menselijke gesprek. De CareHub maakt dat mogelijk als een uniek digitaal zorgplatform dat bestaande, bewezen zorgsoftware samenbrengt in &eacute;&eacute;n samenhangend ecosysteem. Waar traditionele leveranciers kiezen voor gesloten suites, kiest de CareHub voor <strong class="text-white">interoperabiliteit</strong> en <strong class="text-white">open standaarden</strong> zoals FHIR en HL7.
+                </p>
+                <p class="text-lg text-white/65 leading-relaxed mb-8">
+                    Het resultaat: zorgorganisaties krijgen één compleet cliëntbeeld via een integratielaag die ECD, EPD, planning, CRM en data-platforms naadloos verbindt. Minder registratielast, meer tijd voor de cliënt, en een toekomstbestendige digitale zorgketen.
+                </p>
+                <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center text-brand-blue-light font-semibold hover:text-white transition-colors">
+                    Meer over de CareHub
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+            <div class="fade-in-up" style="animation-delay: 0.15s;">
+                <img src="{{ rootPath }}assets/images/carehub-ecosystem-diagram.webp" alt="CareHub ecosysteem diagram met verbonden ECD, planning, CRM en data-platforms voor digitale zorgtechnologie integratie" class="w-full h-auto rounded-2xl border border-white/10" width="600" height="450" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TARGET AUDIENCES (3 pillars)                 -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28" aria-label="Voor wie">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+            <span class="eyebrow mb-4">Eén ecosysteem, drie doelgroepen</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 mt-5">Digitale transformatie voor de gehele <span class="gradient-text">zorgketen</span></h2>
+            <p class="text-lg text-white/60">Het CareHub-ecosysteem verbindt zorgorganisaties, zorgtechnologie-bedrijven en investeerders voor een sterkere, datagedreven zorgsector.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card: Zorgorganisaties -->
+            <article class="group glass p-8 hover:border-white/20 transition-all duration-300 fade-in-up">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
                 </div>
-            </div>
-        </section>
+                <h3 class="text-xl font-semibold text-white mb-3">Zorgorganisaties</h3>
+                <p class="text-white/65 mb-6 leading-relaxed">Verminder administratieve lasten, verbeter het cliëntbeeld en realiseer werkdruk verlaging in GGZ, jeugdzorg, ouderenzorg en langdurige zorg met geïntegreerde zorgtechnologie.</p>
+                <a href="{{ langPrefix }}/zorgorganisaties" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                    Ontdek de mogelijkheden
+                    <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </article>
 
-        <!-- ============================================ -->
-        <!-- TARGET AUDIENCES (3 pillars)                 -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-brand-light" aria-label="Voor wie">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Eén ecosysteem, drie doelgroepen</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">Digitale transformatie voor de gehele zorgketen</h2>
-                    <p class="text-lg text-gray-600">Het CareHub-ecosysteem verbindt zorgorganisaties, zorgtechnologie-bedrijven en investeerders voor een sterkere, datagedreven zorgsector.</p>
+            <!-- Card: Zorgtech-bedrijven -->
+            <article class="group glass p-8 hover:border-white/20 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
                 </div>
+                <h3 class="text-xl font-semibold text-white mb-3">Zorgtech-bedrijven</h3>
+                <p class="text-white/65 mb-6 leading-relaxed">Schaal uw zorgsoftware sneller via het CareHub-ecosysteem. Profiteer van integratie, toegang tot zorgklanten en ondersteuning bij financiering als zorgtech scale-up.</p>
+                <a href="{{ langPrefix }}/zorgtech-softwarebedrijven" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                    Sluit aan bij het ecosysteem
+                    <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </article>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card: Zorgorganisaties -->
-                    <article class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 fade-in-up">
-                        <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                            <svg class="w-7 h-7 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Zorgorganisaties</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Verminder administratieve lasten, verbeter het cliëntbeeld en realiseer werkdruk verlaging in GGZ, jeugdzorg, ouderenzorg en langdurige zorg met geïntegreerde zorgtechnologie.</p>
-                        <a href="{{ langPrefix }}/zorgorganisaties" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blue-dark transition-colors">
-                            Ontdek de mogelijkheden
-                            <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </article>
-
-                    <!-- Card: Zorgtech-bedrijven -->
-                    <article class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                            <svg class="w-7 h-7 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Zorgtech-bedrijven</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Schaal uw zorgsoftware sneller via het CareHub-ecosysteem. Profiteer van integratie, toegang tot zorgklanten en ondersteuning bij financiering als zorgtech scale-up.</p>
-                        <a href="{{ langPrefix }}/zorgtech-softwarebedrijven" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blue-dark transition-colors">
-                            Sluit aan bij het ecosysteem
-                            <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </article>
-
-                    <!-- Card: Investeerders -->
-                    <article class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                            <svg class="w-7 h-7 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Investeerders & Partners</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">Partner worden in de digitale toekomst van de zorg. Langetermijnwaarde door het samenbrengen van bewezen zorgtechnologie in één open ecosysteem.</p>
-                        <a href="{{ langPrefix }}/investeerders-partners" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-brand-blue-dark transition-colors">
-                            Bekijk investeringskansen
-                            <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </article>
+            <!-- Card: Investeerders -->
+            <article class="group glass p-8 hover:border-white/20 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
                 </div>
-            </div>
-        </section>
+                <h3 class="text-xl font-semibold text-white mb-3">Investeerders & Partners</h3>
+                <p class="text-white/65 mb-6 leading-relaxed">Partner worden in de digitale toekomst van de zorg. Langetermijnwaarde door het samenbrengen van bewezen zorgtechnologie in één open ecosysteem.</p>
+                <a href="{{ langPrefix }}/investeerders-partners" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                    Bekijk investeringskansen
+                    <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
 
-        <!-- ============================================ -->
-        <!-- WHY PCD / USP SECTION                        -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-white" aria-label="Waarom PCD">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="order-2 lg:order-1 fade-in-up" style="animation-delay: 0.15s;">
-                        <img src="{{ rootPath }}assets/images/digital-healthcare-innovation.webp" alt="Healthcare innovatie laboratorium met medische professionals en digitale dashboards voor zorgtechnologie in Nederland" class="w-full h-auto rounded-2xl shadow-lg" width="600" height="450" loading="lazy">
+<!-- ============================================ -->
+<!-- WHY PCD / USP SECTION                        -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28" aria-label="Waarom PCD">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 fade-in-up" style="animation-delay: 0.15s;">
+                <img src="{{ rootPath }}assets/images/digital-healthcare-innovation.webp" alt="Healthcare innovatie laboratorium met medische professionals en digitale dashboards voor zorgtechnologie in Nederland" class="w-full h-auto rounded-2xl border border-white/10" width="600" height="450" loading="lazy">
+            </div>
+            <div class="order-1 lg:order-2 fade-in-up">
+                <span class="eyebrow mb-4">Onze overtuiging</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6 mt-5">Niemand mag <span class="gradient-text">alleen</span> staan in de zorg</h2>
+                <p class="text-lg text-white/65 leading-relaxed mb-10">
+                    Elk jaar groeit de werkdruk op zorgverleners. Systemen praten niet met elkaar, administratie stapelt zich op, en de pati&euml;nt verdwijnt achter de formulieren. Wij zijn ervan overtuigd dat het anders kan. Door de beste zorgtechnologie samen te brengen in een open ecosysteem, verminderen we fragmentatie en geven we zorgprofessionals hun vak terug.
+                </p>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl icon-tile flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Privacy-by-design & security-by-default</h3>
+                            <p class="text-sm text-white/60 mt-1">NEN 7510, ISO 27001 en AVG-compliant. Klaar voor Wegiz en EHDS.</p>
+                        </div>
                     </div>
-                    <div class="order-1 lg:order-2 fade-in-up">
-                        <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Onze overtuiging</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">Niemand mag alleen staan in de zorg</h2>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                            Elk jaar groeit de werkdruk op zorgverleners. Systemen praten niet met elkaar, administratie stapelt zich op, en de pati&euml;nt verdwijnt achter de formulieren. Wij zijn ervan overtuigd dat het anders kan. Door de beste zorgtechnologie samen te brengen in een open ecosysteem, verminderen we fragmentatie en geven we zorgprofessionals hun vak terug.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-navy-900">Privacy-by-design & security-by-default</h3>
-                                    <p class="text-sm text-gray-600 mt-1">NEN 7510, ISO 27001 en AVG-compliant. Klaar voor Wegiz en EHDS.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-navy-900">Interoperabiliteit via open standaarden</h3>
-                                    <p class="text-sm text-gray-600 mt-1">FHIR, HL7 en REST API's voor naadloze ECD/EPD-koppeling en datadeling.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-navy-900">Groei door acquisitie en integratie</h3>
-                                    <p class="text-sm text-gray-600 mt-1">Bewezen zorgsoftware wordt onderdeel van één samenhangend ecosysteem.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-navy-900">ESG & maatschappelijke impact</h3>
-                                    <p class="text-sm text-gray-600 mt-1">Duurzaam ondernemen met focus op passende zorg, werkdruk verlaging en vergrijzing.</p>
-                                </div>
-                            </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl icon-tile flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Interoperabiliteit via open standaarden</h3>
+                            <p class="text-sm text-white/60 mt-1">FHIR, HL7 en REST API's voor naadloze ECD/EPD-koppeling en datadeling.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl icon-tile flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">Groei door acquisitie en integratie</h3>
+                            <p class="text-sm text-white/60 mt-1">Bewezen zorgsoftware wordt onderdeel van één samenhangend ecosysteem.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl icon-tile flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white">ESG & maatschappelijke impact</h3>
+                            <p class="text-sm text-white/60 mt-1">Duurzaam ondernemen met focus op passende zorg, werkdruk verlaging en vergrijzing.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- ============================================ -->
-        <!-- CASES PREVIEW                                -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-navy-900" aria-label="Cases">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Praktijkcases</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Digitale zorgtransformatie in de praktijk</h2>
-                    <p class="text-lg text-white/60">Ontdek hoe zorgorganisaties met het CareHub-ecosysteem werkprocessen optimaliseren, administratieve lasten verminderen en betere zorg leveren.</p>
+<!-- ============================================ -->
+<!-- CASES PREVIEW                                -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28" aria-label="Cases">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+            <span class="eyebrow mb-4">Praktijkcases</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 mt-5">Digitale zorgtransformatie in de praktijk</h2>
+            <p class="text-lg text-white/60">Ontdek hoe zorgorganisaties met het CareHub-ecosysteem werkprocessen optimaliseren, administratieve lasten verminderen en betere zorg leveren.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Case 1: GGZ -->
+            <article class="group glass overflow-hidden hover:border-white/20 transition-all duration-300 fade-in-up">
+                <div class="aspect-video overflow-hidden">
+                    <img src="{{ rootPath }}assets/images/carehub-huisarts-consult.webp" alt="Digitale cliëntreis in de GGZ: meer regie voor cliënten en minder werkdruk voor behandelaren" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
                 </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Case 1: GGZ -->
-                    <article class="group bg-navy-800 rounded-2xl overflow-hidden hover:bg-navy-700 transition-all duration-300 fade-in-up">
-                        <div class="aspect-video overflow-hidden">
-                            <img src="{{ rootPath }}assets/images/carehub-huisarts-consult.webp" alt="Digitale cliëntreis in de GGZ: meer regie voor cliënten en minder werkdruk voor behandelaren" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-xs font-semibold text-brand-blue uppercase tracking-wider">GGZ digitalisering</span>
-                            <h3 class="text-lg font-bold text-white mt-2 mb-3">Van zorg naar welzijn: een digitale cliëntreis in de GGZ</h3>
-                            <p class="text-sm text-white/60 mb-4">Hoe een GGZ-organisatie meer regie bij cliënten legde en werkdruk van behandelaren verminderde via digitale cliëntreizen.</p>
-                            <a href="{{ langPrefix }}/case-ggz" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-blue-400 transition-colors">
-                                Lees de case
-                                <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Case 2: Ziekenhuis-Care -->
-                    <article class="group bg-navy-800 rounded-2xl overflow-hidden hover:bg-navy-700 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="aspect-video overflow-hidden">
-                            <img src="{{ rootPath }}assets/images/carehub-verpleegkundige-thuiszorg.webp" alt="Digitaal zorgpad tussen ziekenhuis en care: van 25 systemen naar één regielaag voor betere datadeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-xs font-semibold text-brand-blue uppercase tracking-wider">Ketenzorg</span>
-                            <h3 class="text-lg font-bold text-white mt-2 mb-3">Eén digitaal zorgpad: van 25 systemen naar één regielaag</h3>
-                            <p class="text-sm text-white/60 mb-4">Een regionale samenwerking verbindt ziekenhuis en care-partners via één digitale regielaag voor betere datastromen.</p>
-                            <a href="{{ langPrefix }}/case-ziekenhuis-care" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-blue-400 transition-colors">
-                                Lees de case
-                                <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Case 3: 24/7 -->
-                    <article class="group bg-navy-800 rounded-2xl overflow-hidden hover:bg-navy-700 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="aspect-video overflow-hidden">
-                            <img src="{{ rootPath }}assets/images/carehub-telehealth-remote.webp" alt="24/7 digitale zorg zonder extra FTE: workflow-automatisering en cliëntportalen voor zorg op afstand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-xs font-semibold text-brand-blue uppercase tracking-wider">Hybride zorg</span>
-                            <h3 class="text-lg font-bold text-white mt-2 mb-3">24/7 digitale zorg zonder extra FTE</h3>
-                            <p class="text-sm text-white/60 mb-4">Tot 60% minder administratie door portalen en workflow-automatisering voor 24/7 digitale bereikbaarheid.</p>
-                            <a href="{{ langPrefix }}/case-24-7-digitale-zorg" class="inline-flex items-center text-brand-blue font-semibold text-sm hover:text-blue-400 transition-colors">
-                                Lees de case
-                                <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </article>
+                <div class="p-6">
+                    <span class="text-[11px] font-semibold text-brand-blue-light uppercase tracking-wider">GGZ digitalisering</span>
+                    <h3 class="text-lg font-semibold text-white mt-2 mb-3">Van zorg naar welzijn: een digitale cliëntreis in de GGZ</h3>
+                    <p class="text-sm text-white/60 mb-4">Hoe een GGZ-organisatie meer regie bij cliënten legde en werkdruk van behandelaren verminderde via digitale cliëntreizen.</p>
+                    <a href="{{ langPrefix }}/case-ggz" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                        Lees de case
+                        <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
                 </div>
+            </article>
 
-                <div class="text-center mt-12 fade-in-up">
-                    <a href="{{ langPrefix }}/cases" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 hover:border-white/40 rounded-lg transition-all duration-200">
-                        Bekijk alle cases
+            <!-- Case 2: Ziekenhuis-Care -->
+            <article class="group glass overflow-hidden hover:border-white/20 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="aspect-video overflow-hidden">
+                    <img src="{{ rootPath }}assets/images/carehub-verpleegkundige-thuiszorg.webp" alt="Digitaal zorgpad tussen ziekenhuis en care: van 25 systemen naar één regielaag voor betere datadeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="text-[11px] font-semibold text-brand-blue-light uppercase tracking-wider">Ketenzorg</span>
+                    <h3 class="text-lg font-semibold text-white mt-2 mb-3">Eén digitaal zorgpad: van 25 systemen naar één regielaag</h3>
+                    <p class="text-sm text-white/60 mb-4">Een regionale samenwerking verbindt ziekenhuis en care-partners via één digitale regielaag voor betere datastromen.</p>
+                    <a href="{{ langPrefix }}/case-ziekenhuis-care" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                        Lees de case
+                        <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Case 3: 24/7 -->
+            <article class="group glass overflow-hidden hover:border-white/20 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="aspect-video overflow-hidden">
+                    <img src="{{ rootPath }}assets/images/carehub-telehealth-remote.webp" alt="24/7 digitale zorg zonder extra FTE: workflow-automatisering en cliëntportalen voor zorg op afstand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="225" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="text-[11px] font-semibold text-brand-blue-light uppercase tracking-wider">Hybride zorg</span>
+                    <h3 class="text-lg font-semibold text-white mt-2 mb-3">24/7 digitale zorg zonder extra FTE</h3>
+                    <p class="text-sm text-white/60 mb-4">Tot 60% minder administratie door portalen en workflow-automatisering voor 24/7 digitale bereikbaarheid.</p>
+                    <a href="{{ langPrefix }}/case-24-7-digitale-zorg" class="inline-flex items-center text-brand-blue-light font-semibold text-sm group-hover:text-white transition-colors">
+                        Lees de case
+                        <svg class="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="text-center mt-12 fade-in-up">
+            <a href="{{ langPrefix }}/cases" class="inline-flex items-center px-8 py-4 text-base font-semibold rounded-xl btn-outline-soft">
+                Bekijk alle cases
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!-- ECOSYSTEM VISUAL / HOW IT WORKS              -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Hoe het werkt">
+    <div class="orb orb-violet bottom-0 right-[-20%] h-[400px] w-[400px] opacity-[0.15]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+            <span class="eyebrow mb-4">Hoe het werkt</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 mt-5">Eén integratielaag voor de hele zorgketen</h2>
+            <p class="text-lg text-white/60">Van elektronisch cliëntendossier tot telemonitoring en beeldschermzorg: de CareHub verbindt alle schakels in de zorgketen via één veilige integratielaag.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass p-6 fade-in-up">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-4">
+                    <span class="text-xl font-bold text-brand-blue-light">1</span>
+                </div>
+                <h3 class="font-semibold text-white mb-2">Verbinden</h3>
+                <p class="text-sm text-white/60">Koppel bestaande systemen — ECD, EPD, planning en facturatie — via open standaarden aan de CareHub.</p>
+            </div>
+            <div class="glass p-6 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-4">
+                    <span class="text-xl font-bold text-brand-blue-light">2</span>
+                </div>
+                <h3 class="font-semibold text-white mb-2">Integreren</h3>
+                <p class="text-sm text-white/60">De integratielaag normaliseert zorgdata en creëert één cliëntbeeld voor alle betrokken zorgverleners.</p>
+            </div>
+            <div class="glass p-6 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-4">
+                    <span class="text-xl font-bold text-brand-blue-light">3</span>
+                </div>
+                <h3 class="font-semibold text-white mb-2">Automatiseren</h3>
+                <p class="text-sm text-white/60">Workflow-automatisering reduceert registratielast en geeft zorgprofessionals meer tijd voor de cliënt.</p>
+            </div>
+            <div class="glass p-6 fade-in-up" style="animation-delay: 0.3s;">
+                <div class="w-14 h-14 rounded-2xl icon-tile flex items-center justify-center mb-4">
+                    <span class="text-xl font-bold text-brand-blue-light">4</span>
+                </div>
+                <h3 class="font-semibold text-white mb-2">Opschalen</h3>
+                <p class="text-sm text-white/60">Van lokale implementatie naar een regionaal en Europees digitaal zorg ecosysteem via schaalbare architectuur.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FAQ SECTION                                  -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28" aria-label="Veelgestelde vragen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 fade-in-up">
+            <span class="eyebrow mb-4">Veelgestelde vragen</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mt-5">Alles over het CareHub-ecosysteem</h2>
+        </div>
+
+        <div class="space-y-3 fade-in-up" id="faq-accordion">
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-1">
+                    <span class="font-semibold text-white pr-4">Is de CareHub een nieuw IT-systeem of een investeringsfonds?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-1" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">De CareHub is in de eerste plaats een ecosysteem — geen enkel softwareproduct of beleggingsvehikel. Het is een integratielaag die bestaande, bewezen zorgsoftware (<a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue-light hover:text-white underline">ECD, EPD</a>, planning, CRM, data-platforms) met elkaar verbindt. PCD CareHub investeert in de bedrijven die samen dit ecosysteem vormen, zodat zorgorganisaties toegang krijgen tot best-of-breed oplossingen via één samenhangende digitale omgeving.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-2">
+                    <span class="font-semibold text-white pr-4">Hoe verschilt de CareHub van een traditioneel ECD of EPD?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-2" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">Een ECD of EPD is één onderdeel van het digitale zorglandschap. De <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-brand-blue-light hover:text-white underline">CareHub</a> verbíndt al die onderdelen: elektronisch cliëntendossier, planning, facturatie, CRM, cliëntportalen en data-analyse. In plaats van één leverancier voor alles kiest de CareHub voor <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue-light hover:text-white underline">interoperabiliteit</a> — open standaarden zoals FHIR en HL7 zorgen ervoor dat systemen naadloos samenwerken. Het resultaat: een compleet cliëntbeeld zonder vendor lock-in.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-3">
+                    <span class="font-semibold text-white pr-4">Voor welke zorgsectoren is de CareHub geschikt?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-3" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">De CareHub is ontworpen voor de gehele care-sector in Nederland en Europa: <a href="{{ langPrefix }}/case-ggz" class="text-brand-blue-light hover:text-white underline">GGZ</a>, jeugdzorg, ouderenzorg, langdurige zorg (Wlz), wijkverpleging en revalidatie. Door de modulaire opzet en open architectuur kan het ecosysteem worden aangepast aan de specifieke workflows en registratievereisten van elke sector.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-4">
+                    <span class="font-semibold text-white pr-4">Is de CareHub veilig en voldoet het aan wet- en regelgeving?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-4" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">Ja. Privacy-by-design en security-by-default zijn kernprincipes van het CareHub-ecosysteem. Alle aangesloten oplossingen voldoen aan NEN 7510, ISO 27001 en de AVG. Daarnaast anticiperen we op de <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue-light hover:text-white underline">Wegiz</a> (Wet elektronische gegevensuitwisseling in de zorg) en het <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue-light hover:text-white underline">EHDS</a> (European Health Data Space), zodat zorgorganisaties toekomstbestendig digitaliseren.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-5">
+                    <span class="font-semibold text-white pr-4">Hoe kan mijn zorgtech-bedrijf aansluiten bij het ecosysteem?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-5" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">Zorgtech-bedrijven kunnen op verschillende manieren aansluiten bij de CareHub. Als scale-up kunt u profiteren van integratie in een groter ecosysteem, toegang tot een breed netwerk van zorgklanten, en ondersteuning bij financiering en opschaling. PCD biedt een <a href="{{ langPrefix }}/investeerders-partners" class="text-brand-blue-light hover:text-white underline">buy-and-build model</a> waarbij bewezen zorgsoftware wordt samengebracht in één sterk platform. <a href="{{ langPrefix }}/contact" class="text-brand-blue-light hover:text-white underline">Neem contact op</a> om de mogelijkheden te bespreken.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass-subtle overflow-hidden">
+                <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-6">
+                    <span class="font-semibold text-white pr-4">Wat maakt PCD CareHub anders dan andere investeerders in de zorg?</span>
+                    <svg class="faq-icon w-5 h-5 text-brand-blue-light flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                </button>
+                <div id="faq-answer-6" class="faq-content hidden px-6 pb-5" role="region">
+                    <p class="text-white/70 leading-relaxed">PCD is een zorgtechnologiebedrijf dat groeit door acquisitie en integratie. Wij acquireren niet om te knippen en plakken, maar om een samenhangend ecosysteem te bouwen. Onze <a href="{{ langPrefix }}/pioneering-health-care-technology" class="text-brand-blue-light hover:text-white underline">buy-and-build strategie</a> richt zich op langetermijnwaardecreatie: we brengen de beste zorgtechnologie samen, stimuleren interoperabiliteit via open standaarden, en bouwen aan de digitale ruggengraat van de Nederlandse en Europese zorgsector. <a href="{{ langPrefix }}/esg-verklaring" class="text-brand-blue-light hover:text-white underline">ESG-principes</a> en maatschappelijke impact staan centraal in elke beslissing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CTA SECTION                                  -->
+<!-- ============================================ -->
+<section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Call to action">
+    <div class="orb orb-blue top-0 left-1/4 h-[500px] w-[500px] opacity-20"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div class="fade-in-up">
+                <span class="eyebrow mb-4">Klaar voor de volgende stap</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6 mt-5">Klaar om de digitale transformatie in uw zorgorganisatie te <span class="gradient-text">versnellen</span>?</h2>
+                <p class="text-lg text-white/70 mb-8">Ontdek hoe het CareHub-ecosysteem uw zorgorganisatie, zorgtech-bedrijf of investeringsportefeuille kan versterken. Neem vandaag nog contact op met ons team.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl btn-outline-soft">
+                        Meer over de CareHub
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
             </div>
-        </section>
-
-        <!-- ============================================ -->
-        <!-- ECOSYSTEM VISUAL / HOW IT WORKS              -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-white" aria-label="Hoe het werkt">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                    <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Hoe het werkt</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">Eén integratielaag voor de hele zorgketen</h2>
-                    <p class="text-lg text-gray-600">Van elektronisch cliëntendossier tot telemonitoring en beeldschermzorg: de CareHub verbindt alle schakels in de zorgketen via één veilige integratielaag.</p>
-                </div>
-
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center fade-in-up">
-                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl font-bold text-brand-blue">1</span>
-                        </div>
-                        <h3 class="font-semibold text-navy-900 mb-2">Verbinden</h3>
-                        <p class="text-sm text-gray-600">Koppel bestaande systemen — ECD, EPD, planning en facturatie — via open standaarden aan de CareHub.</p>
+            <div class="fade-in-up" style="animation-delay: 0.15s;">
+                <form id="cta-form" action="#" method="POST" class="glass p-6 sm:p-8 space-y-4">
+                    <input type="hidden" name="_subject" value="Contactformulier homepage - PCD CareHub">
+                    <input type="hidden" name="_next" value="https://pcdinvestmentpartners.com/contact">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    <h3 class="text-lg font-semibold text-white mb-2">Neem direct contact op</h3>
+                    <div>
+                        <label for="cta-name" class="block text-sm font-semibold text-white/80 mb-1.5">Naam <span class="text-accent-pink" aria-hidden="true">*</span></label>
+                        <input type="text" id="cta-name" name="name" required autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue-light/40 focus:border-white/20 transition" placeholder="Uw naam">
                     </div>
-                    <div class="text-center fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl font-bold text-brand-blue">2</span>
-                        </div>
-                        <h3 class="font-semibold text-navy-900 mb-2">Integreren</h3>
-                        <p class="text-sm text-gray-600">De integratielaag normaliseert zorgdata en creëert één cliëntbeeld voor alle betrokken zorgverleners.</p>
+                    <div>
+                        <label for="cta-email" class="block text-sm font-semibold text-white/80 mb-1.5">E-mailadres <span class="text-accent-pink" aria-hidden="true">*</span></label>
+                        <input type="email" id="cta-email" name="email" required autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue-light/40 focus:border-white/20 transition" placeholder="uw@email.nl">
                     </div>
-                    <div class="text-center fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl font-bold text-brand-blue">3</span>
-                        </div>
-                        <h3 class="font-semibold text-navy-900 mb-2">Automatiseren</h3>
-                        <p class="text-sm text-gray-600">Workflow-automatisering reduceert registratielast en geeft zorgprofessionals meer tijd voor de cliënt.</p>
+                    <div>
+                        <label for="cta-org" class="block text-sm font-semibold text-white/80 mb-1.5">Organisatie</label>
+                        <input type="text" id="cta-org" name="organization" autocomplete="organization" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue-light/40 focus:border-white/20 transition" placeholder="Naam van uw organisatie">
                     </div>
-                    <div class="text-center fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl font-bold text-brand-blue">4</span>
-                        </div>
-                        <h3 class="font-semibold text-navy-900 mb-2">Opschalen</h3>
-                        <p class="text-sm text-gray-600">Van lokale implementatie naar een regionaal en Europees digitaal zorg ecosysteem via schaalbare architectuur.</p>
+                    <div>
+                        <label for="cta-message" class="block text-sm font-semibold text-white/80 mb-1.5">Bericht <span class="text-accent-pink" aria-hidden="true">*</span></label>
+                        <textarea id="cta-message" name="message" required rows="3" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue-light/40 focus:border-white/20 resize-y transition" placeholder="Hoe kunnen wij u helpen?"></textarea>
                     </div>
-                </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white btn-gradient rounded-xl">
+                        Verstuur bericht
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </button>
+                </form>
+                <script>!function(){var f=document.getElementById('cta-form'),u='info',d='pcdinvestmentpartners.com';f.action='https://formsubmit.co/'+u+'@'+d}();</script>
             </div>
-        </section>
-
-        <!-- ============================================ -->
-        <!-- FAQ SECTION                                  -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-brand-light" aria-label="Veelgestelde vragen">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in-up">
-                    <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-blue bg-brand-blue/10 rounded-full uppercase mb-4">Veelgestelde vragen</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900">Alles over het CareHub-ecosysteem</h2>
-                </div>
-
-                <div class="space-y-4 fade-in-up" id="faq-accordion">
-                    <!-- FAQ 1 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-1">
-                            <span class="font-semibold text-navy-900 pr-4">Is de CareHub een nieuw IT-systeem of een investeringsfonds?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-1" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">De CareHub is in de eerste plaats een ecosysteem — geen enkel softwareproduct of beleggingsvehikel. Het is een integratielaag die bestaande, bewezen zorgsoftware (<a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue hover:underline">ECD, EPD</a>, planning, CRM, data-platforms) met elkaar verbindt. PCD CareHub investeert in de bedrijven die samen dit ecosysteem vormen, zodat zorgorganisaties toegang krijgen tot best-of-breed oplossingen via één samenhangende digitale omgeving.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-2">
-                            <span class="font-semibold text-navy-900 pr-4">Hoe verschilt de CareHub van een traditioneel ECD of EPD?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-2" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">Een ECD of EPD is één onderdeel van het digitale zorglandschap. De <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="text-brand-blue hover:underline">CareHub</a> verbíndt al die onderdelen: elektronisch cliëntendossier, planning, facturatie, CRM, cliëntportalen en data-analyse. In plaats van één leverancier voor alles kiest de CareHub voor <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue hover:underline">interoperabiliteit</a> — open standaarden zoals FHIR en HL7 zorgen ervoor dat systemen naadloos samenwerken. Het resultaat: een compleet cliëntbeeld zonder vendor lock-in.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-3">
-                            <span class="font-semibold text-navy-900 pr-4">Voor welke zorgsectoren is de CareHub geschikt?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-3" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">De CareHub is ontworpen voor de gehele care-sector in Nederland en Europa: <a href="{{ langPrefix }}/case-ggz" class="text-brand-blue hover:underline">GGZ</a>, jeugdzorg, ouderenzorg, langdurige zorg (Wlz), wijkverpleging en revalidatie. Door de modulaire opzet en open architectuur kan het ecosysteem worden aangepast aan de specifieke workflows en registratievereisten van elke sector.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-4">
-                            <span class="font-semibold text-navy-900 pr-4">Is de CareHub veilig en voldoet het aan wet- en regelgeving?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-4" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">Ja. Privacy-by-design en security-by-default zijn kernprincipes van het CareHub-ecosysteem. Alle aangesloten oplossingen voldoen aan NEN 7510, ISO 27001 en de AVG. Daarnaast anticiperen we op de <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue hover:underline">Wegiz</a> (Wet elektronische gegevensuitwisseling in de zorg) en het <a href="{{ langPrefix }}/woordenlijst" class="text-brand-blue hover:underline">EHDS</a> (European Health Data Space), zodat zorgorganisaties toekomstbestendig digitaliseren.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-5">
-                            <span class="font-semibold text-navy-900 pr-4">Hoe kan mijn zorgtech-bedrijf aansluiten bij het ecosysteem?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-5" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">Zorgtech-bedrijven kunnen op verschillende manieren aansluiten bij de CareHub. Als scale-up kunt u profiteren van integratie in een groter ecosysteem, toegang tot een breed netwerk van zorgklanten, en ondersteuning bij financiering en opschaling. PCD biedt een <a href="{{ langPrefix }}/investeerders-partners" class="text-brand-blue hover:underline">buy-and-build model</a> waarbij bewezen zorgsoftware wordt samengebracht in één sterk platform. <a href="{{ langPrefix }}/contact" class="text-brand-blue hover:underline">Neem contact op</a> om de mogelijkheden te bespreken.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 6 -->
-                    <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
-                        <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false" aria-controls="faq-answer-6">
-                            <span class="font-semibold text-navy-900 pr-4">Wat maakt PCD CareHub anders dan andere investeerders in de zorg?</span>
-                            <svg class="faq-icon w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
-                        </button>
-                        <div id="faq-answer-6" class="faq-content hidden px-6 pb-5" role="region">
-                            <p class="text-gray-600 leading-relaxed">PCD is een zorgtechnologiebedrijf dat groeit door acquisitie en integratie. Wij acquireren niet om te knippen en plakken, maar om een samenhangend ecosysteem te bouwen. Onze <a href="{{ langPrefix }}/pioneering-health-care-technology" class="text-brand-blue hover:underline">buy-and-build strategie</a> richt zich op langetermijnwaardecreatie: we brengen de beste zorgtechnologie samen, stimuleren interoperabiliteit via open standaarden, en bouwen aan de digitale ruggengraat van de Nederlandse en Europese zorgsector. <a href="{{ langPrefix }}/esg-verklaring" class="text-brand-blue hover:underline">ESG-principes</a> en maatschappelijke impact staan centraal in elke beslissing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================ -->
-        <!-- CTA SECTION                                  -->
-        <!-- ============================================ -->
-        <section class="py-20 lg:py-28 bg-gradient-to-br from-brand-blue to-brand-blue-dark" aria-label="Call to action">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <div class="fade-in-up">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Klaar om de digitale transformatie in uw zorgorganisatie te versnellen?</h2>
-                        <p class="text-lg text-white/80 mb-8">Ontdek hoe het CareHub-ecosysteem uw zorgorganisatie, zorgtech-bedrijf of investeringsportefeuille kan versterken. Neem vandaag nog contact op met ons team.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="{{ langPrefix }}/carehub-zorg-digitalisering" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 hover:border-white/60 rounded-lg transition-colors">
-                                Meer over de CareHub
-                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="fade-in-up" style="animation-delay: 0.15s;">
-                        <form id="cta-form" action="#" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
-                            <input type="hidden" name="_subject" value="Contactformulier homepage - PCD CareHub">
-                            <input type="hidden" name="_next" value="https://pcdinvestmentpartners.com/contact">
-                            <input type="text" name="_honey" style="display:none">
-                            <input type="hidden" name="_captcha" value="true">
-                            <h3 class="text-lg font-bold text-navy-900 mb-2">Neem direct contact op</h3>
-                            <div>
-                                <label for="cta-name" class="block text-sm font-semibold text-navy-900 mb-1">Naam <span class="text-red-500" aria-hidden="true">*</span></label>
-                                <input type="text" id="cta-name" name="name" required autocomplete="name" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Uw naam">
-                            </div>
-                            <div>
-                                <label for="cta-email" class="block text-sm font-semibold text-navy-900 mb-1">E-mailadres <span class="text-red-500" aria-hidden="true">*</span></label>
-                                <input type="email" id="cta-email" name="email" required autocomplete="email" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="uw@email.nl">
-                            </div>
-                            <div>
-                                <label for="cta-org" class="block text-sm font-semibold text-navy-900 mb-1">Organisatie</label>
-                                <input type="text" id="cta-org" name="organization" autocomplete="organization" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Naam van uw organisatie">
-                            </div>
-                            <div>
-                                <label for="cta-message" class="block text-sm font-semibold text-navy-900 mb-1">Bericht <span class="text-red-500" aria-hidden="true">*</span></label>
-                                <textarea id="cta-message" name="message" required rows="3" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent resize-y" placeholder="Hoe kunnen wij u helpen?"></textarea>
-                            </div>
-                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-brand-blue hover:bg-brand-blue-dark rounded-lg transition-colors">
-                                Verstuur bericht
-                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </button>
-                        </form>
-                        <script>!function(){var f=document.getElementById('cta-form'),u='info',d='pcdinvestmentpartners.com';f.action='https://formsubmit.co/'+u+'@'+d}();</script>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
 
 {% block structured_data %}
 <script type="application/ld+json">

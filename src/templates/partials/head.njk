@@ -19,6 +19,8 @@
 <script>
 (function(){
   try {
+    var h = location.hostname;
+    if (h === 'localhost' || h === '127.0.0.1' || h.endsWith('.local') || /^\d+\.\d+\.\d+\.\d+$/.test(h)) return;
     if (localStorage.getItem('pcd-lang-choice')) return;
     if (sessionStorage.getItem('pcd-lang-redirected')) return;
     var bl = (navigator.language || navigator.languages && navigator.languages[0] || '').toLowerCase();
