@@ -9,7 +9,14 @@ const crypto = require('crypto');
 // ============================================
 // Configuration
 // ============================================
-const SITE_URL = 'https://pcdinvestmentpartners.com';
+// Brand & domein constants. Tijdens rebrand-fase 3 via env-vars:
+//   BRAND_NAME=PCD CareHub
+//   BRAND_DOMAIN=pcdcarehub.com
+//   SITE_URL=https://pcdcarehub.com
+// Defaults wijzen op oude waardes — gedrag onveranderd tot env wordt gezet.
+const BRAND_NAME = process.env.BRAND_NAME || 'PCD Investment Partners';
+const BRAND_DOMAIN = process.env.BRAND_DOMAIN || 'pcdinvestmentpartners.com';
+const SITE_URL = process.env.SITE_URL || `https://${BRAND_DOMAIN}`;
 const LANGUAGES = [
   { code: 'nl', hreflang: 'nl', label: 'Nederlands', prefix: '', rootPath: '', ogLocale: 'nl_NL' },
   { code: 'en', hreflang: 'en', label: 'English', prefix: '/en', rootPath: '../', ogLocale: 'en_US' },
