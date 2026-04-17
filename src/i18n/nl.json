@@ -10,7 +10,7 @@
     "ecosystem_investeerders": "Investeerders & Partners",
     "ecosystem_investeerders_desc": "Groei & samenwerking in zorgtechnologie",
     "about": "Over PCD",
-    "about_pioneering": "Over PCD Investment Partners",
+    "about_pioneering": "Over PCD CareHub",
     "about_pioneering_desc": "Bouwen aan de digitale ruggengraat",
     "about_leadership": "Leiderschap",
     "about_leadership_desc": "Ons team van experts",
@@ -21,13 +21,13 @@
     "contact": "Contact"
   },
   "footer": {
-    "description": "PCD Investment Partners bouwt het CareHub-ecosysteem voor digitale zorgtechnologie in Nederland en Europa.",
+    "description": "PCD CareHub bouwt het CareHub-ecosysteem voor digitale zorgtechnologie in Nederland en Europa.",
     "follow_linkedin": "Volg ons op LinkedIn",
     "col_ecosystem": "Ecosysteem",
     "col_about": "Over PCD",
     "col_contact": "Kennis & Contact",
     "address": "Lijndonk 4<br>Breda, Nederland",
-    "copyright": "&copy; 2024&ndash;2026 PCD Investment Partners. Alle rechten voorbehouden.",
+    "copyright": "&copy; 2024&ndash;2026 PCD CareHub. Alle rechten voorbehouden.",
     "privacy": "Privacyverklaring",
     "cookies": "Cookiebeleid",
     "glossary": "Woordenlijst",
@@ -42,17 +42,17 @@
   },
   "a11y": {
     "skip_to_content": "Ga naar inhoud",
-    "logo_alt": "PCD Investment Partners logo - digitale zorgtechnologie ecosysteem",
-    "logo_aria": "PCD Investment Partners - Naar homepage",
+    "logo_alt": "PCD CareHub logo - digitale zorgtechnologie ecosysteem",
+    "logo_aria": "PCD CareHub - Naar homepage",
     "menu_open": "Menu openen",
     "menu_close": "Menu sluiten",
     "main_nav": "Hoofdnavigatie",
-    "linkedin_aria": "PCD Investment Partners op LinkedIn"
+    "linkedin_aria": "PCD CareHub op LinkedIn"
   },
   "lang_switcher": {
     "label": "Taal"
   },
   "structured_data": {
-    "org_description": "PCD Investment Partners bouwt het CareHub-ecosysteem voor digitale zorgtechnologie in Nederland en Europa."
+    "org_description": "PCD CareHub bouwt het CareHub-ecosysteem voor digitale zorgtechnologie in Nederland en Europa."
   }
 }

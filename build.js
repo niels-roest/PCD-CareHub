@@ -14,7 +14,7 @@ const crypto = require('crypto');
 //   BRAND_DOMAIN=pcdcarehub.com
 //   SITE_URL=https://pcdcarehub.com
 // Defaults wijzen op oude waardes — gedrag onveranderd tot env wordt gezet.
-const BRAND_NAME = process.env.BRAND_NAME || 'PCD Investment Partners';
+const BRAND_NAME = process.env.BRAND_NAME || 'PCD CareHub';
 const BRAND_DOMAIN = process.env.BRAND_DOMAIN || 'pcdinvestmentpartners.com';
 const SITE_URL = process.env.SITE_URL || `https://${BRAND_DOMAIN}`;
 const LANGUAGES = [
@@ -389,11 +389,11 @@ fs.writeFileSync(path.join(DIST, 'robots.txt'), robotsTxt);
 
 // Generate llms.txt for AI crawlers
 console.log('Generating llms.txt...');
-const llmsTxt = `# PCD Investment Partners
-> PCD Investment Partners builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.
+const llmsTxt = `# ${BRAND_NAME}
+> ${BRAND_NAME} builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.
 
 ## About
-- [About PCD Investment Partners](${SITE_URL}/en/pioneering-health-care-technology): Mission, vision, and strategy for healthcare digitalization
+- [About ${BRAND_NAME}](${SITE_URL}/en/pioneering-health-care-technology): Mission, vision, and strategy for healthcare digitalization
 - [Leadership](${SITE_URL}/en/leadership): Board and management team
 - [ESG Statement](${SITE_URL}/en/esg-statement): Environmental, social, and governance commitments
 - [Strategy](${SITE_URL}/en/strategy): Investment strategy and approach
@@ -606,8 +606,8 @@ function htmlToMarkdown(html) {
 
 // Build llms-full.txt from EN pages (international audience)
 let llmsFullSections = [];
-llmsFullSections.push(`# PCD Investment Partners — Full Content`);
-llmsFullSections.push(`> PCD Investment Partners builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.\n`);
+llmsFullSections.push(`# ${BRAND_NAME} — Full Content`);
+llmsFullSections.push(`> ${BRAND_NAME} builds the CareHub ecosystem for digital healthcare technology in the Netherlands and Europe. CareHub is a digital integration platform that connects existing healthcare software — ECD, EPD, planning, CRM, and data platforms — via open standards such as FHIR and HL7 into one cohesive digital care environment.\n`);
 
 let mdMirrorCount = 0;
 
