@@ -8,7 +8,7 @@
  *   1. Unexpected file types (source maps, env files, credentials)
  *   2. Size anomalies (individual files > 2MB, total dist > threshold)
  *   3. Sensitive content leaks (API keys, tokens, private data)
- *   4. Missing expected files (sitemap, robots.txt, CNAME)
+ *   4. Missing expected files (sitemap, robots.txt)
  *
  * Usage: node verify-build.js [--ci]
  *   --ci flag makes the script exit(1) on warnings too (stricter)
@@ -49,7 +49,6 @@ const REQUIRED_FILES = [
   'sitemap.xml',
   'robots.txt',
   'llms.txt',
-  'CNAME',
   '.nojekyll',
   'en/index.html',
   'es/index.html',
