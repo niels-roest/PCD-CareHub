@@ -7,3 +7,11 @@ updates:
     labels:
       - "dependencies"
     open-pull-requests-limit: 5
+    ignore:
+      # Tailwind 4 dropped the CLI from the `tailwindcss` package (no `bin` field), so
+      # `npx tailwindcss` in build.js:46 cannot start and the deploy goes red — that is
+      # what PR #6 (4.2.4, 2026-04-26) did until the pin in PR fix/tailwind-3-pin.
+      # Moving to v4 is a deliberate migration (@tailwindcss/cli + CSS-first config),
+      # not a version bump. Minor and patch updates within 3.x still come through.
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
