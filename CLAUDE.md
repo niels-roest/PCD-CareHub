@@ -1,5 +1,7 @@
 # PCD Investment Partners — Static Website
 
+> **Archived 2026-09-14.** Superseded by `pcd-website-v2` (Next.js on Vercel), which serves `pcdcarehub.com`; DNS left GitHub Pages before 2026-09. This repo builds and deploys to its default Pages URL only. Read-only.
+
 Multi-language static site (Nunjucks → static HTML, GitHub Pages). NL is master language; also en, es, pt-br.
 
 **Build:** `node build.js` → `dist/` **Deploy:** push to `main` → GitHub Actions
@@ -18,7 +20,7 @@ Pages in `src/pages/{lang}/`, templates in `src/templates/`, i18n in `src/i18n/`
 ## Do NOT change (unless explicitly asked)
 `build.js`, `src/templates/base.njk`, `src/templates/layouts/page.njk`,
 `src/templates/partials/header.njk`, `src/templates/partials/footer.njk`,
-`.github/workflows/`, `CNAME`, `.nojekyll`, `indexnow-ping.js`, `carehub-simulatie.html`
+`.github/workflows/`, `.nojekyll`, `indexnow-ping.js`, `carehub-simulatie.html`
 
 ## Detail Files
 - Build pipeline, frontmatter, template vars, i18n, structured data → `docs/build-system.md`

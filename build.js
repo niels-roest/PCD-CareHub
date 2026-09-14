@@ -73,7 +73,7 @@ if (fs.existsSync(mainJsPath)) {
 }
 
 // NOTE: carehub-simulatie.html is confidential (intern gebruik) — deliberately excluded from public build
-const staticFiles = ['CNAME', '.nojekyll', 'google9bcc3954f46db140.html'];
+const staticFiles = ['.nojekyll', 'google9bcc3954f46db140.html'];
 for (const file of staticFiles) {
   const src = path.join(__dirname, file);
   if (fs.existsSync(src)) {
