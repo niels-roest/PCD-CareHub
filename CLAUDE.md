@@ -21,4 +21,7 @@ Pages in `src/pages/{lang}/`, templates in `src/templates/`, i18n in `src/i18n/`
 `.github/workflows/`, `CNAME`, `.nojekyll`, `indexnow-ping.js`, `carehub-simulatie.html`
 
 ## Detail Files
+- Build pipeline, frontmatter, template vars, i18n, structured data → `docs/build-system.md`
+- Brand colors, content guidelines, JS/CSS features, images, SEO → `docs/content-design.md`
+- New page, content update, image, verification checklists → `docs/checklists.md`
 - Company info, team members → `docs/company-info.md`
