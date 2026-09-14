@@ -1,0 +1,28 @@
+name: Build check
+
+# deploy.yml only runs on push to main, so a pull request had no build signal at all:
+# the Tailwind 4 bump (#6) merged green-looking and broke every deploy from 2026-04-26
+# until 2026-09-14. This runs the same two steps deploy.yml runs, without deploying.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: node build.js
+
+      - name: Verify build output
+        run: node verify-build.js --ci
